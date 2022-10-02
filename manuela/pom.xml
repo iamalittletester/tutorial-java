@@ -7,10 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>manuela2</artifactId>
+    <artifactId>manuela</artifactId>
     <packaging>jar</packaging>
 
-    <name>manuela2</name>
+    <name>manuela</name>
     <url>http://maven.apache.org</url>
 
     <properties>
