@@ -20,7 +20,7 @@ public class AppricotJamTest {
     @Test
     void firstTest() {
         //sout+tab for print
-
+        System.out.println();
     }
 
 }
