@@ -13,8 +13,7 @@ public class ApricotJamTest {
     public double aDouble = 29292.29292929229;
     public boolean aBoolean;
     public String aSweetener = "sugar\ncane";
-    public File newFile;
-    public Date newDate;
+    public Date new_Date;
 
     @Test
     void firstTest() {
