@@ -1,6 +1,6 @@
 package com.imalittletester.cookie;
 
-public class CookieTest {
+public class Cookie {
     public String name;
     public String value;
     public String domain;
