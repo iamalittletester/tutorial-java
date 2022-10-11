@@ -1,24 +1,27 @@
 package com.imalittletester.jam;
 
+import org.junit.jupiter.api.Test;
+
+import java.io.File;
+import java.util.Date;
+
 public class ApricotJamTest {
-//fields
 
-    public String sweetener;
-    public float sweetenerQty;
-    public String sweetenerUom;
+    public int aPositiveInt = -10;
+    public long aPositiveLong = -1000000000;
+    public float aFloat = 500;
+    public double aDouble = 1.2;
+    public boolean aBoolean;
+    public String aSweetener = "sugar\ncane";
+    public Date newDate;
 
-    public float apricotQty;
-    public String apricotUom;
-
-    public int jarQty;
-    public int jarCapacity;
-
-    public boolean isDietetic;
-
-
-
-   //method
-
-
-
+    @Test
+    void firstTest(){
+//        System.out.println(aPositiveInt);
+//        System.out.println(aPositiveLong);
+//        System.out.println(aFloat);
+//        System.out.println(aDouble);
+//        System.out.println(aBoolean);
+        System.out.println("->> " + aSweetener);
+    }
 }
