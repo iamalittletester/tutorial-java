@@ -13,6 +13,25 @@ public class AppricotJamTest {
     public String aSweetener = "sugar cane";
     public Date new_Date;
 
+    //stocam un nou appricotJam
+    public AppricotJam appricotJam = new AppricotJam();
+    public AppricotJam appricotJam2 =  new AppricotJam("white sugar");
+    public AppricotJam appricotJam3 =  new AppricotJam("sugar cane", 1.5f, "kg", 10, "kg", 30, 500, false);
+
+    @Test
+    void secondTest(){
+        System.out.println(appricotJam);
+
+        System.out.println(appricotJam2);
+
+        System.out.println(appricotJam3);
+
+        appricotJam3.makeJam();
+        System.out.println(appricotJam3.sweetener);
+
+        appricotJam3.sweetener.contains("sugar");
+    }
+
     @Test
     void firstTest() {
         //sout+tab for print
@@ -22,6 +41,7 @@ public class AppricotJamTest {
 //        System.out.println(aDouble);
 //        System.out.println(aBoolean);
         System.out.println(" --> " + aSweetener);
+     //   asertEquals (api.login("username1","passwoard1") + getResponse "Success");
     }
 
 }
