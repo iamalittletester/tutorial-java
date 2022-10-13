@@ -1,16 +1,16 @@
 package com.imalittletester.garmincookies;
 
 public class GarminCookies {
-    public String name;
-    public String value;
-    public String domain;
-    public String path;
-    public String maxAge;
-    public int size;
-    public boolean isHttpOnly;
-    public boolean isSecure;
-    public String sameSite;
-    public boolean isSameParty;
-    public String partitionKey;
+    public String cookieName;
+    public String cookieValue;
+    public String cookieDomain;
+    public String cookiePath;
+    public String cookieMaxAge;
+    public int cookieSize;
+    public boolean cookieIsHttpOnly;
+    public boolean cookieIsSecure;
+    public String cookieHasSameSite;
+    public boolean cookieIsSameParty;
+    public String cookiePartitionKey;
 
 }
