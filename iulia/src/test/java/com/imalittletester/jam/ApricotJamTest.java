@@ -2,7 +2,6 @@ package com.imalittletester.jam;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
 import java.util.Date;
 
 public class ApricotJamTest {
@@ -14,6 +13,19 @@ public class ApricotJamTest {
     public boolean aBoolean;
     public String aSweetener = "sugar\ncane";
     public Date new_Date;
+
+    public ApricotJam apricotJam = new ApricotJam();
+    public ApricotJam apricotJam2 = new ApricotJam();
+
+    public ApricotJam apricotJam3 = new ApricotJam("sugar cane",1.5f, "kg",10, "kg", 30, 500,false );
+    @Test
+    void secondTest() {
+        System.out.println(apricotJam);
+        System.out.println(apricotJam2);
+        System.out.println(apricotJam3);
+        apricotJam3.makeJam();
+
+    }
 
     @Test
     void firstTest() {

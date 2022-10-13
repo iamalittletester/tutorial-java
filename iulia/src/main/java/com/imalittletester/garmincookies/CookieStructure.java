@@ -4,12 +4,12 @@ import java.util.Date;
 
 public class CookieStructure {
 
-    public String cookieName;
-    public int cookieSize;
-    public long cookieValue;
-    public boolean cookieHttpOnly;
+    public String name;
+    public int size;
+    public long value;
+    public boolean httpOnly;
     public char secure = '✓';
-    public String cookiePriority;
-    public Date cookieExpirationDate;
+    public String priority;
+    public Date expirationDate;
 
 }
