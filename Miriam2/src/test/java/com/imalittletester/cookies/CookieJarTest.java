@@ -1,11 +1,6 @@
 package com.imalittletester.cookies;
 
-import com.imalittletester.cookies.CookieJar;
 import org.junit.jupiter.api.Test;
-
-
-import org.junit.jupiter.api.Test;
-
 
 public class CookieJarTest {
 
