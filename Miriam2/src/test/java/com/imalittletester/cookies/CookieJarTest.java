@@ -1,5 +1,8 @@
 package com.imalittletester.cookies;
 
+import com.imalittletester.cookies.CookieJar;
+import org.junit.jupiter.api.Test;
+
 
 import org.junit.jupiter.api.Test;
 
@@ -13,5 +16,6 @@ public class CookieJarTest {
     void cookieTest () {
         System.out.println(cookieJar1);
         System.out.println(cookieJar2);
+        System.out.println(cookieJar2.isProvidedParamSubDomainOfDomain());
     }
 }

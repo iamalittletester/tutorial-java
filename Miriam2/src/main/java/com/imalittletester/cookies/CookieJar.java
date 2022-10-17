@@ -25,8 +25,20 @@ public class CookieJar {
 
     }
 
-    private boolean isProvidedParamSubDomainOfDomain () {
+    public boolean isProvidedParamSubDomainOfDomain () {
         return false;
+    }
+
+    @Override
+    public String toString (){
+        return "CookieJar{" +
+                "name='" + name + '\'' +
+                ", value=" + value +
+                ", size='" + size + '\'' +
+                ", httpOnly=" + httpOnly +
+                ", secure='" + secure + '\'' +
+                ", priority=" + priority +
+                '}';
     }
 }
 
