@@ -18,8 +18,10 @@ public class AppricotJam {
 
     //method
     //constructor
-    public AppricotJam(){}
-    public AppricotJam(String sweetener){
+    public AppricotJam() {
+    }
+
+    public AppricotJam(String sweetener) {
         this.sweetener = sweetener;
     }
 
@@ -34,13 +36,14 @@ public class AppricotJam {
         this.isDietetic = isDietetic;
     }
 
-    public void makeJam(){
+    public void makeJam() {
         System.out.println("Adding " + sweetenerQty + " " + sweetenerUom + " of " + sweetener);
         System.out.println("Also adding: " + apricotQty + " " + apricotUom + " of apricots");
         System.out.println("Boiling for " + preparationTime() + " minutes");
         System.out.println("Is dietetic? " + isDietetic);
     }
-    private int preparationTime(){
+
+    private int preparationTime() {
         return 30;
     }
 
