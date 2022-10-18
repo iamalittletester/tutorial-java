@@ -2,10 +2,9 @@ package com.imalittletester.jam;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
 import java.util.Date;
 
-public class AppricotJamTest {
+public class ApricotJamTest {
 
     public int aPositiveInt = 10;
     public long aPositiveLong = 1000000;
@@ -15,9 +14,9 @@ public class AppricotJamTest {
     public String aSweetener = "Sugar cane";
     public Date new_Date;
 
-    public AppricotJam apricotJam = new AppricotJam();
-    public AppricotJam apricotJam2 = new AppricotJam("white sugar");
-    public AppricotJam apricotJam3 = new AppricotJam("sugar cane", 1.5f, "kg", 10, "kg", 30, 500, false);
+    public ApricotJam apricotJam = new ApricotJam();
+    public ApricotJam apricotJam2 = new ApricotJam("white sugar");
+    public ApricotJam apricotJam3 = new ApricotJam("sugar cane", 1.5f, "kg", 10, "kg", 30, 500, false);
 
 
     @Test

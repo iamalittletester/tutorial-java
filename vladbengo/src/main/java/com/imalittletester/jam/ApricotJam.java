@@ -1,9 +1,7 @@
 
 package com.imalittletester.jam;
 
-import com.imalittletester.App;
-
-public class AppricotJam {
+public class ApricotJam {
     //fields
     public String sweetener;
     public float sweetenerQty;
@@ -19,13 +17,13 @@ public class AppricotJam {
     public boolean isDietetic;
 
     //method
-    public AppricotJam() {}
+    public ApricotJam() {}
 
-    public AppricotJam(String sweetener) {
+    public ApricotJam(String sweetener) {
         this.sweetener = sweetener;
     }
 
-    public AppricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricotUom,
+    public ApricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricotUom,
                       int jarQty, int jarCapacity, boolean isDietetic) {
         this.sweetener = sweetener;
         this.sweetenerQty = sweetenerQty;

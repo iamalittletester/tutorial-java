@@ -2,7 +2,7 @@ package com.imalittletester.cookie;
 
 import java.util.Date;
 
-public class cookieHomework {
+public class cookie {
 
     public String cookieName;
     public String cookieValue;
