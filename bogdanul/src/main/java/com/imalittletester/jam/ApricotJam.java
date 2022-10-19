@@ -20,6 +20,7 @@ public class ApricotJam {
     public ApricotJam() {
 
     }
+
     public ApricotJam(String sweetener) {
         this.sweetener = sweetener;
 
@@ -43,7 +44,7 @@ public class ApricotJam {
         System.out.println("Is dietetic? " + isDietetic);
     }
 
-    private int preparationTime(){
+    private int preparationTime() {
         return 30;
     }
 

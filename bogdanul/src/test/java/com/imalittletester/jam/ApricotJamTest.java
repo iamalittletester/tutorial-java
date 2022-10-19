@@ -1,5 +1,6 @@
 package com.imalittletester.jam;
 
+import com.imalittletester.cookie.Cookie;
 import org.apache.commons.lang3.builder.ToStringExclude;
 import org.testng.annotations.Test;
 
@@ -20,11 +21,13 @@ public class ApricotJamTest {
     public ApricotJam apricotJam2 = new ApricotJam("white sugar");
     public ApricotJam apricotJam3 = new ApricotJam("sugar cane", 1.5f, "kg", 10, "kg", 30, 500, false);
 
+    public Cookie cookie = new Cookie("SESSION", "2b168afd-513c-4745-8c87-6d7a45193fe0");
+    public Cookie cookie2 = new Cookie("CONSENT", "Yes", "garmin.ro", 42, true, "2038-01-10T8:00:01.7Z");
+
     @Test
     void secondTest() {
 
         System.out.println(apricotJam);
-
         System.out.println(apricotJam2);
 
         System.out.println(apricotJam3);
@@ -35,12 +38,24 @@ public class ApricotJamTest {
     }
 
     @Test
-    void firstTest(){
+    void firstTest() {
 //        System.out.println(aPositiveInt);
 //        System.out.println(aPositiveLong);
 //        System.out.println(aFloat);
 //        System.out.println(aDouble);
 //        System.out.println(aBoolean);
-        System.out.println("->> " + aSweetener);
+//        System.out.println("->> " + aSweetener);
+    }
+
+    @Test
+    void cookieTest() {
+        cookie.printCookieValues();
+        cookie2.printCookieValues();
+
+        boolean isSubDomain1 = cookie2.isProvidedParamSubDomainOfDomain("garmin");
+        boolean isSubDomain2 = cookie2.isProvidedParamSubDomainOfDomain("asdada");
+
+        System.out.println("Is garmin a subdomain of " + cookie2.domain + "? " + isSubDomain1);
+        System.out.println("Is asdada a subdomain of " + cookie2.domain + "? " + isSubDomain2);
     }
 }
