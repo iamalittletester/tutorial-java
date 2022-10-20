@@ -18,6 +18,7 @@ public class CookieStructureTest {
         System.out.println(cookieStructure);
         System.out.println(cookieStructure2);
         System.out.println(cookieStructure3);
+        System.out.println(cookieStructure3.isProvidedParamSubDomainOfDomain("preferences"));
     }
 
 

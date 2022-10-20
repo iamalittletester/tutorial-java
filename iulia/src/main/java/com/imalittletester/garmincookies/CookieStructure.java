@@ -48,8 +48,8 @@ public class CookieStructure {
     }
 
 
-    public boolean isProvidedParamSubDomainOfDomain() {
-        return isProvidedParamSubDomainOfDomain;
+    public boolean isProvidedParamSubDomainOfDomain(String stringToCheck) {
+        return name.contains(stringToCheck) ;
     }
 
 
