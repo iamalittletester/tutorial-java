@@ -6,7 +6,11 @@
 
   <groupId>com.imalittletester</groupId>
   <artifactId>tutorial-java</artifactId>
+  <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>chirica3</module>
+  </modules>
 
   <name>tutorial-java</name>
   <!-- FIXME change it to the project's website -->
