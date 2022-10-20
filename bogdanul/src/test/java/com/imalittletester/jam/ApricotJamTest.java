@@ -19,10 +19,23 @@ public class ApricotJamTest {
 
     public ApricotJam apricotJam = new ApricotJam();
     public ApricotJam apricotJam2 = new ApricotJam("white sugar");
-    public ApricotJam apricotJam3 = new ApricotJam("sugar cane", 1.5f, "kg", 10, "kg", 30, 500, false);
+    public ApricotJam apricotJam3 = new ApricotJam("sugar cane", 1.5f, "kg", 10,
+            "kg", 30, 500, true);
 
     public Cookie cookie = new Cookie("SESSION", "2b168afd-513c-4745-8c87-6d7a45193fe0");
-    public Cookie cookie2 = new Cookie("CONSENT", "Yes", "garmin.ro", 42, true, "2038-01-10T8:00:01.7Z");
+    public Cookie cookie2 = new Cookie("CONSENT", "Yes", "garmin.ro", 42, true,
+            "2038-01-10T8:00:01.7Z");
+
+    public MelonJam melonJam = new MelonJam("plain sugar", 10, "kg", 10,
+            "kg",new Bottle (20, 1000), false);
+
+
+    @Test
+    void thirdTest() {
+        apricotJam3.makeJam();
+        System.out.println("-------------");
+        melonJam.makeJam();
+    }
 
     @Test
     void secondTest() {
@@ -35,6 +48,8 @@ public class ApricotJamTest {
         System.out.println(apricotJam3.sweetener);
 
         apricotJam3.sweetener.contains("sugar");
+
+        melonJam.makeJam();
     }
 
     @Test
