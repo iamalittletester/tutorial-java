@@ -52,10 +52,7 @@ public class ApricotJamTest {
         cookie.printCookieValues();
         cookie2.printCookieValues();
 
-        boolean isSubDomain1 = cookie2.isProvidedParamSubDomainOfDomain("garmin");
-        boolean isSubDomain2 = cookie2.isProvidedParamSubDomainOfDomain("asdada");
-
-        System.out.println("Is garmin a subdomain of " + cookie2.domain + "? " + isSubDomain1);
-        System.out.println("Is asdada a subdomain of " + cookie2.domain + "? " + isSubDomain2);
+        System.out.println("Is garmin a subdomain of " + cookie2.domain + "? " + cookie2.isProvidedParamSubDomainOfDomain("garmin"));
+        System.out.println("Is asdada a subdomain of " + cookie2.domain + "? " + cookie2.isProvidedParamSubDomainOfDomain("asdada"));
     }
 }
