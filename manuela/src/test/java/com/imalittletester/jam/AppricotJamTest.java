@@ -1,9 +1,13 @@
 package com.imalittletester.jam;
 
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 //import java.io.File;
 import java.util.Date;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class) //set order on run tests
 public class AppricotJamTest {
     public int aPositiveInt = -10;
     public long aPositiveLong = -100000000;
@@ -16,8 +20,23 @@ public class AppricotJamTest {
     //stocam un nou appricotJam
     public AppricotJam appricotJam = new AppricotJam();
     public AppricotJam appricotJam2 = new AppricotJam("white sugar");
-    public AppricotJam appricotJam3 = new AppricotJam("sugar cane", 1.5f, "kg", 10, "kg", 30, 500, false);
+    public AppricotJam appricotJam3 = new AppricotJam("sugar cane", 1.5f, "kg", 10, "kg", 30, 500, true);
 
+    //initialized a new object of melonJam
+    public MelonJam melonJam = new MelonJam("plain sugar", 10, "kg", 10, "kg", new Bottle(20,100), false);
+
+    @Order(1) //sa fie rulate in ordine
+    @Test
+
+  void thirdTest(){
+      appricotJam3.makeJam();
+      System.out.println(appricotJam3.getSweetener());
+      appricotJam3.setSweetener("stevia");
+      System.out.println(appricotJam3.getSweetener());
+      System.out.println("-------------------------");
+      melonJam.makeJam();
+  }
+  @Order(2)
     @Test
     void secondTest() {
         System.out.println(appricotJam);
@@ -31,8 +50,11 @@ public class AppricotJamTest {
 
         appricotJam3.sweetener.contains("sugar");
 
+        melonJam.makeJam();
+
     }
 
+    @Order(3)
     @Test
     void firstTest() {
         //sout+tab for print

@@ -2,19 +2,14 @@ package com.imalittletester.jam;
 
 import org.apache.commons.lang3.builder.ToStringExclude;
 
-public class AppricotJam {
+//inhierence
+public class AppricotJam extends Jam {
     //fields
-    public String sweetener;
-    public float sweetenerQty;
-    public String sweetenerUom;
-
     public float apricotQty;
     public String apricotUom;
 
     public int jarQty;
     public int jarCapacity;
-
-    public boolean isDietetic;
 
     //method
     //constructor
@@ -22,25 +17,23 @@ public class AppricotJam {
     }
 
     public AppricotJam(String sweetener) {
-        this.sweetener = sweetener;
+        super(sweetener);
     }
 
     public AppricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricotUom, int jarQty, int jarCapacity, boolean isDietetic) {
-        this.sweetener = sweetener;
-        this.sweetenerQty = sweetenerQty;
-        this.sweetenerUom = sweetenerUom;
+        super(sweetener, sweetenerQty, sweetenerUom, isDietetic); //the supper class Jam
         this.apricotQty = apricotQty;
         this.apricotUom = apricotUom;
         this.jarQty = jarQty;
         this.jarCapacity = jarCapacity;
-        this.isDietetic = isDietetic;
-    }
 
+    }
+@Override
     public void makeJam() {
-        System.out.println("Adding " + sweetenerQty + " " + sweetenerUom + " of " + sweetener);
+        super.makeJam();
         System.out.println("Also adding: " + apricotQty + " " + apricotUom + " of apricots");
         System.out.println("Boiling for " + preparationTime() + " minutes");
-        System.out.println("Is dietetic? " + isDietetic);
+
     }
 
     private int preparationTime() {

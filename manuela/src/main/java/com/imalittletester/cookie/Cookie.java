@@ -56,8 +56,7 @@ public class Cookie {
     public boolean isProvidedParamSubDomainOfDomain(String isSubDomainOfDomain) {
         //if (domain.contains(isSubDomainOfDomain)) {
         //    return true;
-        //} else {
-        //    return false;
+        //} else {//    return false;
         return domain.contains(isSubDomainOfDomain);
     }
 }
