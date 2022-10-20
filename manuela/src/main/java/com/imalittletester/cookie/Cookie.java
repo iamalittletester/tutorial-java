@@ -58,7 +58,6 @@ public class Cookie {
         //    return true;
         //} else {
         //    return false;
-        //}
         return domain.contains(isSubDomainOfDomain);
     }
 }
