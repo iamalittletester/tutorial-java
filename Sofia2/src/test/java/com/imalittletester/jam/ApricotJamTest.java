@@ -12,6 +12,21 @@ public class ApricotJamTest {
     public boolean aBoolean;
     public String aSweetner = "sugar\\cane";
 
+    public ApricotJam apricotJam = new ApricotJam("");
+    public ApricotJam apricotJam2 = new ApricotJam("white sugar");
+    public ApricotJam apricotJam3 = new ApricotJam("sugar cane", 1.5f, "kg", 10, "kg", 30, 500, false);
+
+
+
+
+    @Test
+    void secondTest() {
+        System.out.println(apricotJam);
+                System.out.println(apricotJam2);
+                System.out.println(apricotJam3);
+                apricotJam3.makeJam();
+    }
+
     @Test
     void firstTest() {
  //      System.out.println(aPositiveInt);
@@ -20,6 +35,8 @@ public class ApricotJamTest {
   //      System.out.println(aDouble);
    //     System.out.println(aBoolean);
         System.out.println(" --> " + aSweetner);
+            System.out.println(apricotJam2);
+
 
 
 
