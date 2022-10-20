@@ -54,10 +54,11 @@ public class Cookie {
 
     //Not sure about the requirements, but on CookieTest.java returns false or true based on entered value
     public boolean isProvidedParamSubDomainOfDomain(String isSubDomainOfDomain) {
-        if (domain.contains(isSubDomainOfDomain)) {
-            return true;
-        } else {
-            return false;
-        }
+        //if (domain.contains(isSubDomainOfDomain)) {
+        //    return true;
+        //} else {
+        //    return false;
+        //}
+        return domain.contains(isSubDomainOfDomain);
     }
 }
