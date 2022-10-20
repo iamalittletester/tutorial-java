@@ -29,7 +29,7 @@ public class GarminCookie {
 
     public void ShowCookie(String cookieName, String cookieValue, Date cookieExpiration, boolean secure, int cookieSize){
         System.out.println("Acest site foloseste cookie-ul "+ cookieName + " cu valoarea " + cookieValue + ".");
-        System.out.println("Cookie-ul are dimesiunea " + cookieSize + " biti si expira in " + cookieExpiration + ".");
+        System.out.println("Cookie-ul are dimensiunea " + cookieSize + " biti si expira in " + cookieExpiration + ".");
         System.out.println("Este un cookie secure? " + secure);
     }
 
