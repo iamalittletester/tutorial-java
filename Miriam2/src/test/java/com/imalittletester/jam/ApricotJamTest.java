@@ -21,7 +21,20 @@ public class ApricotJamTest {
     public ApricotJam apricotJam = new ApricotJam();
     public ApricotJam apricotJam2 = new ApricotJam("white sugar");
 
-    public ApricotJam apricotJam3 = new ApricotJam("sugar cane", 1.5f, "kg", 10, "kg", 30, 500, false);
+    public ApricotJam apricotJam3 = new ApricotJam("sugar cane", 1.5f, "kg", 10, "kg", 30, 500, true);
+
+
+
+    public MelonJam melonJam = new MelonJam("plain sugar ",10,"kg ",10, "kg ",new Bottle(20,1000), false);
+
+    @Test
+    void thirdTest (){
+        apricotJam3.makeJam();
+        System.out.println("--------------------------------");
+        melonJam.makeJam();
+    }
+
+
 
     @Test
     void secondTest () {
@@ -32,6 +45,8 @@ public class ApricotJamTest {
         System.out.println(apricotJam3);
 
         apricotJam3.makeJam();
+
+        melonJam.makeJam();
     }
 
   @Test
