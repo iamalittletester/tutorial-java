@@ -1,8 +1,8 @@
 package com.imalittletester.jam;
 
 public class ApricotJam extends Jam{
-    public float apricotQty;
-    public String apricotUom;
+
+    public Fruit fruit;
 
     public Jar jar;
 
@@ -14,15 +14,11 @@ public class ApricotJam extends Jam{
         super (sweetener);
 
     }
- public ApricotJam (String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricotUom, boolean isDietetic) {
-     super (sweetener, sweetenerQty, sweetenerUom, isDietetic);
-     this.apricotQty = apricotQty;
-     this.apricotUom = apricotUom;
+ public ApricotJam (String sweetener, float sweetenerQty, String sweetenerUom, Fruit fruit, boolean isDietetic) {
+     super (sweetener, sweetenerQty, sweetenerUom, fruit.fruitName, fruit.fruitQty, fruit.fruitUom, isDietetic);
  }
-    public ApricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricotUom, Jar jar, boolean isDietetic) {
-        super (sweetener, sweetenerQty, sweetenerUom, isDietetic);
-        this.apricotQty = apricotQty;
-        this.apricotUom = apricotUom;
+    public ApricotJam(String sweetener, float sweetenerQty, String sweetenerUom, Fruit fruit, Jar jar, boolean isDietetic) {
+        this.fruit = fruit;
         this.jar = jar;
 
     }

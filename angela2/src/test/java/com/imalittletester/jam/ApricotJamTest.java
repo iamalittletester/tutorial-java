@@ -18,10 +18,10 @@ public class ApricotJamTest {
 
     public ApricotJam apricotJam = new ApricotJam();
     public ApricotJam apricotJam2 = new ApricotJam("white sugar");
-    public ApricotJam apricotJam3 = new ApricotJam("sugar cane", 1.5f, "kg", 10, "kg", false);
+    public ApricotJam apricotJam3 = new ApricotJam("sugar cane", 1.5f, "kg", new Fruit("apricot", 10, "kg"), new Jar(10, 800), false);
 
-    public MelonJam melonJamRaureni = new MelonJam ("plain sugar", 10, "kg", 10, "kg", new Bottle(20, 1000), false);
-    public ApricotJam apricotJam4 = new ApricotJam ("xylitol", 7, "kg", 9, "kg", new Jar(15, 800), true);
+    public MelonJam melonJamRaureni = new MelonJam ("plain sugar", 10, "kg", new Fruit("melon", 8, "kg"), new Bottle(20, 1000), false);
+    public ApricotJam apricotJam4 = new ApricotJam ("xylitol", 7, "kg", new Fruit("apricot", 8, "kg"), new Jar(15, 800), true);
 
    @Order(1)
     @Test
