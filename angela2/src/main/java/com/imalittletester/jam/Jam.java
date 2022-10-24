@@ -6,7 +6,17 @@ public class Jam extends Fruit{
     public String sweetenerUom;
 
     public Fruit fruit;
+    public Jar jar;
     public boolean isDietetic;
+
+    public Jam (String sweetener, float sweetenerQty, String sweetenerUom, Fruit fruit, Jar jar, boolean isDietetic){
+        super (fruit.fruitName, fruit.fruitQty, fruit.fruitUom);
+        this.sweetener = sweetener;
+        this.sweetenerQty = sweetenerQty;
+        this.sweetenerUom = sweetenerUom;
+        this.jar = jar;
+        this.fruit = fruit;
+    }
 
     public Jam(String sweetener, float sweetenerQty, String sweetenerUom, Fruit fruit, boolean isDietetic) {
         super (fruit.fruitName, fruit.fruitQty, fruit.fruitUom);
@@ -16,6 +26,12 @@ public class Jam extends Fruit{
         this.isDietetic = isDietetic;
     }
 
+    public Jam (String sweetener, float sweetenerQty, String sweetenerUom, boolean isDietetic){
+        this.sweetener = sweetener;
+        this.sweetenerQty = sweetenerQty;
+        this.sweetenerUom = sweetenerUom;
+        this.isDietetic = isDietetic;
+    }
     public Jam() {
     }
 
@@ -31,5 +47,20 @@ public class Jam extends Fruit{
     public void makeJam (){
         System.out.println("Adding " + sweetenerQty + " " + sweetenerUom + " of " + sweetener);
         System.out.println("Is jam dietetic? " + isDietetic);
+    }
+
+    @Override
+    public String toString() {
+        return "Jam{" +
+                "sweetener='" + sweetener + '\'' +
+                ", sweetenerQty=" + sweetenerQty +
+                ", sweetenerUom='" + sweetenerUom + '\'' +
+                ", fruit=" + fruit +
+                ", jar=" + jar +
+                ", isDietetic=" + isDietetic +
+                ", fruitName='" + fruitName + '\'' +
+                ", fruitQty=" + fruitQty +
+                ", fruitUom='" + fruitUom + '\'' +
+                '}';
     }
 }

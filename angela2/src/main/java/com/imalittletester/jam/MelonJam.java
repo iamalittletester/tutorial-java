@@ -2,13 +2,13 @@ package com.imalittletester.jam;
 
 public class MelonJam extends Jam{
 
-    public Fruit fruit;
-
     public Bottle bottle;
 
 
     public MelonJam(String sweetener, float sweetenerQty, String sweetenerUom, Fruit fruit, Bottle bottle, boolean isDietetic) {
-        super (sweetener, sweetenerQty, sweetenerUom, fruit.fruitName, fruit.fruitQty, fruit.fruitUom, bottle.bottleQty, bottle.bottleCapacity, isDietetic);
+        super (sweetener, sweetenerQty, sweetenerUom, isDietetic);
+        this.bottle = bottle;
+        this.fruit = fruit;
 
 
     }

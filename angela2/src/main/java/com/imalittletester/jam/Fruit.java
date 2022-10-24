@@ -15,5 +15,12 @@ public class Fruit {
 
     }
 
-
+    @Override
+    public String toString() {
+        return "Fruit{" +
+                "fruitName='" + fruitName + '\'' +
+                ", fruitQty=" + fruitQty +
+                ", fruitUom='" + fruitUom + '\'' +
+                '}';
+    }
 }
