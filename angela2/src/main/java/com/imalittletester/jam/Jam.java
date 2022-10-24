@@ -1,6 +1,6 @@
 package com.imalittletester.jam;
 
-public class Jam {
+public class Jam{
     public String sweetener;
     public float sweetenerQty;
     public String sweetenerUom;

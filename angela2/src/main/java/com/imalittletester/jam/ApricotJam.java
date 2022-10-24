@@ -3,8 +3,8 @@ package com.imalittletester.jam;
 public class ApricotJam extends Jam{
     public float apricotQty;
     public String apricotUom;
-    public int jarQty;
-    public int jarCapacity;
+
+    public Jar jar;
 
     public ApricotJam() {
     }
@@ -14,19 +14,25 @@ public class ApricotJam extends Jam{
         super (sweetener);
 
     }
-
-    public ApricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricotUom, int jarQty, int jarCapacity, boolean isDietetic) {
+ public ApricotJam (String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricotUom, boolean isDietetic) {
+     super (sweetener, sweetenerQty, sweetenerUom, isDietetic);
+     this.apricotQty = apricotQty;
+     this.apricotUom = apricotUom;
+ }
+    public ApricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricotUom, Jar jar, boolean isDietetic) {
         super (sweetener, sweetenerQty, sweetenerUom, isDietetic);
         this.apricotQty = apricotQty;
         this.apricotUom = apricotUom;
-        this.jarQty = jarQty;
-        this.jarCapacity = jarCapacity;
+        this.jar = jar;
+
     }
+    
 @Override
     public void makeJam() {
         super.makeJam();
         System.out.println("Also adding " + apricotQty + " " + apricotUom + " of apricots");
         System.out.println("Boiling for " + preparationTime() + " minutes");
+        System.out.println("Bottling in: " + jar.jarQty + " jars of capacity: "+ jar.jarCapacity);
 
     }
 
@@ -42,8 +48,7 @@ public class ApricotJam extends Jam{
                 ", sweetenerUom='" + sweetenerUom + '\'' +
                 ", apricotQty=" + apricotQty +
                 ", apricotUom='" + apricotUom + '\'' +
-                ", jarQty=" + jarQty +
-                ", jarCapacity=" + jarCapacity +
+                ", jar=" + jar +
                 ", isDietetic=" + isDietetic +
                 '}';
     }
