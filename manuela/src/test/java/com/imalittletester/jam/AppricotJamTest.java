@@ -67,6 +67,7 @@ public class AppricotJamTest {
         //   asertEquals (api.login("username1","passwoard1") + getResponse "Success");
     }
 
+    @Order (3)
     @Test
     void fourthTest(){
         appricotJam3.makeJam();
