@@ -33,7 +33,7 @@ public class GarminCookie {
         System.out.println("Este un cookie secure? " + secure);
     }
 
-    public boolean isProvidedParamSubDomainOfDomain(String param, String domain){
+    public boolean isProvidedParamSubDomainOfDomain(String param){
         return domain.contains(param);
     }
 }

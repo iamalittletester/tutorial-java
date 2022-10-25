@@ -14,14 +14,13 @@ public class ApricotJam extends Jam {
         super(sweetener);
     }
 
-    public ApricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricotUom,
-                      Jar jar, boolean isDietetic) {
+    public ApricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty,
+                      String apricotUom, Jar jar, boolean isDietetic) {
         super(sweetener, sweetenerQty, sweetenerUom, isDietetic);
         this.apricotQty = apricotQty;
         this.apricotUom = apricotUom;
         this.jar = jar;
      }
-
 
      @Override
     public void makeJam() {
