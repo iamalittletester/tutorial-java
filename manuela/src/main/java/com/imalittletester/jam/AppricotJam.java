@@ -8,8 +8,7 @@ public class AppricotJam extends Jam {
     public float apricotQty;
     public String apricotUom;
 
-    public int jarQty;
-    public int jarCapacity;
+    public Jar jar;
 
     //method
     //constructor
@@ -20,12 +19,11 @@ public class AppricotJam extends Jam {
         super(sweetener);
     }
 
-    public AppricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricotUom, int jarQty, int jarCapacity, boolean isDietetic) {
+    public AppricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricotUom, Jar jar, boolean isDietetic) {
         super(sweetener, sweetenerQty, sweetenerUom, isDietetic); //the supper class Jam
         this.apricotQty = apricotQty;
         this.apricotUom = apricotUom;
-        this.jarQty = jarQty;
-        this.jarCapacity = jarCapacity;
+        this.jar = jar;
 
     }
 @Override
@@ -33,6 +31,7 @@ public class AppricotJam extends Jam {
         super.makeJam();
         System.out.println("Also adding: " + apricotQty + " " + apricotUom + " of apricots");
         System.out.println("Boiling for " + preparationTime() + " minutes");
+    System.out.println("Having " + jar.jarQty + " jars"+ " " + "of capacity: " + jar.jarCapacity );
 
     }
 
@@ -48,8 +47,8 @@ public class AppricotJam extends Jam {
                 ", sweetenerUom='" + sweetenerUom + '\'' +
                 ", apricotQty=" + apricotQty +
                 ", apricotUom='" + apricotUom + '\'' +
-                ", jarQty=" + jarQty +
-                ", jarCapacity=" + jarCapacity +
+                ", jarQty=" + jar +
+                ", jarCapacity=" + jar +
                 ", isDietetic=" + isDietetic +
                 '}';
     }

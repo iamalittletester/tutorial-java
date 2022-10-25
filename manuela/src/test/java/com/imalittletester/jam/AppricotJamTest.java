@@ -20,7 +20,7 @@ public class AppricotJamTest {
     //stocam un nou appricotJam
     public AppricotJam appricotJam = new AppricotJam();
     public AppricotJam appricotJam2 = new AppricotJam("white sugar");
-    public AppricotJam appricotJam3 = new AppricotJam("sugar cane", 1.5f, "kg", 10, "kg", 30, 500, true);
+    public AppricotJam appricotJam3 = new AppricotJam("sugar cane", 1.5f, "kg", 10, "kg", new Jar(30, 500), true);
 
     //initialized a new object of melonJam
     public MelonJam melonJam = new MelonJam("plain sugar", 10, "kg", 10, "kg", new Bottle(20,100), false);
@@ -65,6 +65,11 @@ public class AppricotJamTest {
 //        System.out.println(aBoolean);
         System.out.println(" --> " + aSweetener);
         //   asertEquals (api.login("username1","passwoard1") + getResponse "Success");
+    }
+
+    @Test
+    void fourthTest(){
+        appricotJam3.makeJam();
     }
 
 }
