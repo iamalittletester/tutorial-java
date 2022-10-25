@@ -8,7 +8,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 import java.util.Date;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class ApricotJamTest {
+public class JamTest {
 
     public int aPositiveInt = 10;
     public float aFloat = 1.5F;
@@ -16,12 +16,12 @@ public class ApricotJamTest {
     public String aSweetener = "sugar cane";
     public Date new_Date;
 
-    public ApricotJam apricotJam = new ApricotJam();
-    public ApricotJam apricotJam2 = new ApricotJam("white sugar");
-    public ApricotJam apricotJam3 = new ApricotJam("sugar cane", 1.5f, "kg", new Fruit("apricot", 10, "kg"), new Jar(10, 800), false);
+    public Jam apricotJam = new Jam();
+    public Jam apricotJam2 = new Jam("white sugar");
+    public Jam apricotJam3 = new Jam("sugar cane", 1.5f, "kg", new Fruit("apricot", 10, "kg"), new Recipient("jar", 10, 800), false);
 
-    public MelonJam melonJamRaureni = new MelonJam ("plain sugar", 10, "kg", new Fruit("melon", 8, "kg"), new Bottle(20, 1000), false);
-    public ApricotJam apricotJam4 = new ApricotJam ("xylitol", 7, "kg", new Fruit("apricot", 8, "kg"), new Jar(15, 800), true);
+    public Jam melonJamRaureni = new Jam ("plain sugar", 10, "kg", new Fruit("melon", 8, "kg"), new Recipient ("bottle", 20, 1000), false);
+    public Jam apricotJam4 = new Jam ("xylitol", 7, "kg", new Fruit("apricot", 8, "kg"), new Recipient ("jar", 15, 800), true);
 
    @Order(1)
     @Test
@@ -55,7 +55,8 @@ public class ApricotJamTest {
     @Order(4)
     @Test
     void fifthTest (){
-        System.out.println(apricotJam4);
-        apricotJam4.makeJam();
+        //System.out.println(apricotJam4);
+       // apricotJam4.makeJam();
+        melonJamRaureni.makeJam();
     }
 }

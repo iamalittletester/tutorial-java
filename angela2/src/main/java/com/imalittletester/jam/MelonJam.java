@@ -1,6 +1,6 @@
 package com.imalittletester.jam;
 
-public class MelonJam extends Jam{
+/* public class MelonJam extends Jam{
 
     public Bottle bottle;
 
@@ -29,3 +29,4 @@ public class MelonJam extends Jam{
 
 
 }
+ */

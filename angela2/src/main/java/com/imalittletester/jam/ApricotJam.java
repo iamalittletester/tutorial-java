@@ -1,6 +1,6 @@
 package com.imalittletester.jam;
 
-public class ApricotJam extends Jam{
+/* public class ApricotJam extends Jam{
     public Jar jar;
 
     public ApricotJam() {
@@ -46,4 +46,4 @@ public class ApricotJam extends Jam{
                 ", isDietetic=" + isDietetic +
                 '}';
     }
-}
+} */
