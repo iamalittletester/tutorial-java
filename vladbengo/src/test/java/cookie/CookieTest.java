@@ -10,8 +10,10 @@ public class CookieTest {
 
     @Test
     void cookieTest () {
-        System.out.println(cookie1);
-        System.out.println(cookie2);
-        System.out.println(cookie2.isProvidedParamSubDomainOfDomain());
+       System.out.println(cookie1);
+       System.out.println(cookie2);
+
+        System.out.println("Is garmin a subdomain of " + cookie2.cookieDomain + "? " + cookie2.isProvidedParamSubDomainOfDomain(".garmin.com"));
+        System.out.println("Is asdada a subdomain of " + cookie2.cookieDomain + "? " + cookie2.isProvidedParamSubDomainOfDomain("asdada"));
     }
 }

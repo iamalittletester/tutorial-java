@@ -25,8 +25,8 @@ public class Cookie {
         this.cookieIsHttpOnly = httpOnly;
     }
 
-    public boolean isProvidedParamSubDomainOfDomain () {
-        return false;
+    public boolean isProvidedParamSubDomainOfDomain (String subDomain) {
+        return cookieDomain.contains(subDomain);
     }
 
     @Override
@@ -40,5 +40,4 @@ public class Cookie {
                 ", httpOnly = " + cookieIsHttpOnly +
                 '}';
     }
-
 }
