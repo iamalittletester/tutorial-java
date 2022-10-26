@@ -14,6 +14,6 @@ public class CookieTest {
         System.out.println(cookieStructure);
         System.out.println(cookieStructure2);
         cookieStructure3.displayCookieValues();
-        cookieStructure3.isProvidedParamSubDomainOfDomain("garmin");
+        System.out.println(cookieStructure3.isProvidedParamSubDomainOfDomain("garmin"));
     }
 }
