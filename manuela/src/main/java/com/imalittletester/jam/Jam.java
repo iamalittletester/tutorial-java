@@ -5,9 +5,15 @@ public class Jam {
     //Homework T3
     //public float fruitQty;
     //public String fruitUom;
+
     //In clasa AppricotJam - in constructorul cu toate valorile as scrie:
-    //this.fruitQty = apricotQty;
-    //this.fruitUom = apricotUom;
+
+    //public AppricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float fruitQty, String fruitUom, Jar jar, boolean isDietetic)
+    // {
+    //        super(sweetener, sweetenerQty, sweetenerUom, fruitQty, fruitUom, isDietetic);
+    //        this.jar = jar;
+    //        }
+
     //As inlocui astea unde mai este necesar in AppricotJam si MelonJam in loc de:
     // public float melonQty;
     // public String melonUom;
