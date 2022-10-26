@@ -1,12 +1,14 @@
 package com.imalittletester.jam;
 
 import com.imalittletester.cookie.Cookie;
-import org.apache.commons.lang3.builder.ToStringExclude;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.testng.annotations.Test;
 
-import java.io.File;
 import java.util.Date;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ApricotJamTest {
 
     public int aPositiveInt = -10;
@@ -20,7 +22,7 @@ public class ApricotJamTest {
     public ApricotJam apricotJam = new ApricotJam();
     public ApricotJam apricotJam2 = new ApricotJam("white sugar");
     public ApricotJam apricotJam3 = new ApricotJam("sugar cane", 1.5f, "kg", 10,
-            "kg", 30, 500, true);
+            "kg", new Jar(30, 500), true);
 
     public Cookie cookie = new Cookie("SESSION", "2b168afd-513c-4745-8c87-6d7a45193fe0");
     public Cookie cookie2 = new Cookie("CONSENT", "Yes", "garmin.ro", 42, true,
@@ -30,6 +32,7 @@ public class ApricotJamTest {
             "kg",new Bottle (20, 1000), false);
 
 
+    @Order(1)
     @Test
     void thirdTest() {
         apricotJam3.makeJam();
@@ -37,6 +40,7 @@ public class ApricotJamTest {
         melonJam.makeJam();
     }
 
+    @Order(2)
     @Test
     void secondTest() {
 
@@ -52,6 +56,7 @@ public class ApricotJamTest {
         melonJam.makeJam();
     }
 
+    @Order(3)
     @Test
     void firstTest() {
 //        System.out.println(aPositiveInt);
@@ -62,6 +67,7 @@ public class ApricotJamTest {
 //        System.out.println("->> " + aSweetener);
     }
 
+    @Order(4)
     @Test
     void cookieTest() {
         cookie.printCookieValues();

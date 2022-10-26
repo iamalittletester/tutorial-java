@@ -6,8 +6,7 @@ public class ApricotJam extends Jam {
     public float apricotQty;
     public String apricotUom;
 
-    public int jarQty;
-    public int jarCapacity;
+    public Jar jar;
 
     //method
 
@@ -20,13 +19,12 @@ public class ApricotJam extends Jam {
 
     }
 
-    public ApricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricotUom, int jarQty, int jarCapacity, boolean isDietetic) {
+    public ApricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricotUom, Jar jar, boolean isDietetic) {
         super(sweetener, sweetenerQty, sweetenerUom, isDietetic);
         this.apricotQty = apricotQty;
         this.apricotUom = apricotUom;
-        this.jarQty = jarQty;
-        this.jarCapacity = jarCapacity;
         this.isDietetic = isDietetic;
+        this.jar = jar;
     }
 @Override
     public void makeJam() {
@@ -48,8 +46,7 @@ public class ApricotJam extends Jam {
                 ", sweetenerUom='" + sweetenerUom + '\'' +
                 ", apricotQty=" + apricotQty +
                 ", apricotUom='" + apricotUom + '\'' +
-                ", jarQty=" + jarQty +
-                ", jarCapacity=" + jarCapacity +
+                ", jar=" + jar +
                 ", isDietetic=" + isDietetic +
                 '}';
     }
