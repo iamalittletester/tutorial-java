@@ -21,9 +21,11 @@ public class AppricotJam extends Jam {
 
     public AppricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricotUom, Jar jar, boolean isDietetic) {
         super(sweetener, sweetenerQty, sweetenerUom, isDietetic); //the supper class Jam
-        this.apricotQty = apricotQty;
-        this.apricotUom = apricotUom;
+       this.apricotQty = apricotQty;
+       this.apricotUom = apricotUom;
         this.jar = jar;
+        //this.fruitQty = apricotQty;
+        //this.fruitUom = apricotUom;
 
     }
 @Override
