@@ -1,44 +1,36 @@
 package com.imalittletester.jam;
 
 
-public class ApricotJam {
+import java.sql.SQLOutput;
 
-    public String sweetner;
-    public float sweetnerQty;
-    public String sweetnerUom;
+public class ApricotJam  extends Jam {
 
     public float apricotQty;
     public String apricotUom;
 
-    public int jarQty;
-    public int jarCapacity;
-
-    public boolean isDietetic;
+    public Jar jar;
 
 
 
-public ApricotJam(String sweetner){
-    this.sweetner = sweetner;
-    this.sweetnerQty = sweetnerQty;
+
+public ApricotJam(String sweetener){
+    super(sweetener);
 
 }
 
-    public ApricotJam(String sweetner, float sweetnerQty, String sweetnerUom, float apricotQty, String apricotUom, int jarQty, int jarCapacity, boolean isDietetic) {
-        this.sweetner = sweetner;
-        this.sweetnerQty = sweetnerQty;
-        this.sweetnerUom = sweetnerUom;
+    public ApricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricotUom,Jar jar, boolean isDietetic) {
+       super(sweetener, sweetenerQty, sweetenerUom, isDietetic);
         this.apricotQty = apricotQty;
         this.apricotUom = apricotUom;
-        this.jarQty = jarQty;
-        this.jarCapacity = jarCapacity;
-        this.isDietetic = isDietetic;
+        this.jar = jar;
+
     }
 
     public void makeJam() {
-    System.out.println("Adding " + sweetnerQty + " " + sweetnerUom + " of " + sweetner);
+    super.makeJam();
     System.out.println("Also adding: " + apricotQty + " " + apricotQty + " of apricot" );
     System.out.println("Boiling for " + preparationTime() + " minutes");
-    System.out.println("Is dietetic?" + isDietetic);
+        System.out.println("Bottling in: " + jar.jarQty + " jars of capacity: "+ jar.jarCapacity);
 }
 private int preparationTime(){
     return 30;
@@ -49,13 +41,12 @@ private int preparationTime(){
 
     public String toString(){
     return "ApricotJam{" +
-            "sweetener='" + sweetner + '\'' +
-            ", sweetenerQty=" + sweetnerQty +
-            ", sweetenerUom='" + sweetnerUom + '\'' +
+            "sweetener='" + sweetener + '\'' +
+            ", sweetenerQty=" + sweetenerQty +
+            ", sweetenerUom='" + sweetenerUom + '\'' +
             ", apricotQty=" + apricotQty +
             ", apricotUom='" + apricotUom + '\'' +
-            ", jarQty=" + jarQty +
-            ", jarCapacity=" + jarCapacity +
+            ", jar=" + jar +
             ", isDietetic=" + isDietetic +
             '}';
 }
