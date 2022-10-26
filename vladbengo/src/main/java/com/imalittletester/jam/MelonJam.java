@@ -1,36 +1,30 @@
 package com.imalittletester.jam;
 
-public class MelonJam {
-
-    public String sweetener;
-    public float sweetenerQty;
-    public String sweetenerUom;
-
+public class MelonJam extends Jam {
     public float melonQty;
     public String melonUom;
 
-    public int bottleQty;
-    public int bottleCapacity;
+    public Bottle bottle;
 
-    public boolean isDietetic;
-
-    //constructors
-    public MelonJam(String sweetener, float sweetenerQty, String sweetenerUom, float melonQty, String melonUom, int bottleQty, int bottleCapacity, boolean isDietetic){
-        this.sweetener = sweetener;
-        this.sweetenerQty = sweetenerQty;
-        this.sweetenerUom = sweetenerUom;
+    public MelonJam(String sweetener, float sweetenerQty, String sweetenerUom, float melonQty, String melonUom,
+                    Bottle bottle, boolean isDietetic) {
+        super(sweetener, sweetenerQty, sweetenerUom, isDietetic);
         this.melonQty = melonQty;
         this.melonUom = melonUom;
-        this.bottleQty = bottleQty;
-        this.bottleCapacity = bottleCapacity;
-        this.isDietetic = isDietetic;
+        this.bottle = bottle;
     }
 
     public MelonJam() {
-        this.sweetener = sweetener;
     }
 
-    public MelonJam(String sweetener){
-        this.sweetener = sweetener;
+    public MelonJam(String sweetener) {
+        super(sweetener);
+    }
+
+    @Override
+    public void makeJam() {
+        super.makeJam();
+        System.out.println("Adding " + melonQty + " " + melonUom + " of melon");
+        System.out.println("Bottling in: " + bottle.bottleQty + " bottles of capacity: " + bottle.bottleCapacity);
     }
 }
