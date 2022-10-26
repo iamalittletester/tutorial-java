@@ -1,6 +1,8 @@
 package com.imalittletester.jam;
 
 public class Jam{
+    //To optimize classes I would extract the fruit doing the following: create a Fruit class with the common fields
+    // such as fruitName, fruitQty, fruit
     public String sweetener;
     public float sweetenerQty;
     public String sweetenerUom;
