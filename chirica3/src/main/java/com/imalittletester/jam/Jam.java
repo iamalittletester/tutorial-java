@@ -1,5 +1,7 @@
 package com.imalittletester.jam;
 
+import java.util.Objects;
+
 public class Jam {
     //Pentru a extrage datele fructului separat, putem declara in Jam
     // cele doua calitati ale fructului pe care le folosim la Jam:
@@ -36,5 +38,18 @@ public class Jam {
     public void makeJam(){
         System.out.println("Adding " + sweetenerQty + " " + sweetenerUom + " of " + sweetener);
         System.out.println("Is jam dietetic? " + isDietetic);
+    }
+
+   @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Jam jam = (Jam) o;
+        return Float.compare(jam.sweetenerQty, sweetenerQty) == 0 && isDietetic == jam.isDietetic && sweetener.equals(jam.sweetener) && sweetenerUom.equals(jam.sweetenerUom);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sweetener, sweetenerQty, sweetenerUom, isDietetic);
     }
 }
