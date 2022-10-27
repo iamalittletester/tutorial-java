@@ -21,6 +21,8 @@ public class MelonJam extends Jam {
         super(sweetener);
     }
 
+
+
     @Override
     public void makeJam() {
         super.makeJam();

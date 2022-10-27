@@ -1,5 +1,7 @@
 package com.imalittletester.jam;
 
+import java.util.Objects;
+
 public class Jam {
     //
     //
@@ -34,5 +36,18 @@ public class Jam {
 
     public void setSweetener(String sweetener) {
         this.sweetener = sweetener;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Jam jam = (Jam) o;
+        return Float.compare(jam.sweetenerQty, sweetenerQty) == 0 && isDietetic == jam.isDietetic && Objects.equals(sweetener, jam.sweetener) && Objects.equals(sweetenerUom, jam.sweetenerUom);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sweetener, sweetenerQty, sweetenerUom, isDietetic);
     }
 }

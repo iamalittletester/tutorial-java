@@ -21,18 +21,24 @@ public class ApricotJamTest {
     public ApricotJam apricotJam = new ApricotJam();
     public ApricotJam apricotJam2 = new ApricotJam("white sugar");
     public ApricotJam apricotJam3 = new ApricotJam("sugar cane", 1.5f, "kg", 10, "kg", 30, 500, true);
+    public ApricotJam apricotJam4 = new ApricotJam("sugar cane", 1.5f, "kg", 10, "kg", 30, 500, true);
 
     public MelonJam melonJam = new MelonJam("plain sugar", 10, "kg", 10, "kg", new Bottle(20, 1000), false);
 
     @Order(1)
     @Test
     void thirdTest() {
-        apricotJam3.makeJam();
-        System.out.println(apricotJam3.getSweetener());
-        apricotJam3.setSweetener("stevia");
-        System.out.println(apricotJam3.getSweetener());
-        System.out.println("---------------------");
-        melonJam.makeJam();
+//        apricotJam3.makeJam();
+//        System.out.println(apricotJam3.getSweetener());
+//        apricotJam3.setSweetener(aSweetener);
+//        System.out.println(apricotJam3.getSweetener());
+//        System.out.println("---------------------");
+//        melonJam.makeJam();
+
+        System.out.println(apricotJam3.howManyFullJars(2300));
+        System.out.println(apricotJam3.remainderJam(2300));
+        System.out.println(apricotJam3.equals(apricotJam2));
+        System.out.println(apricotJam3.equals(apricotJam4));
     }
 
     @Order(2)

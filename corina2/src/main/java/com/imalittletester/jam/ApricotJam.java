@@ -1,5 +1,7 @@
 package com.imalittletester.jam;
 
+import java.util.Objects;
+
 public class ApricotJam extends Jam {
     public float apricotQty;
     public String apricotUom;
@@ -46,5 +48,26 @@ public class ApricotJam extends Jam {
                 ", jarCapacity=" + jarCapacity +
                 ", isDietetic=" + isDietetic +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ApricotJam that = (ApricotJam) o;
+        return Float.compare(that.apricotQty, apricotQty) == 0 && jarQty == that.jarQty && jarCapacity == that.jarCapacity && Objects.equals(apricotUom, that.apricotUom);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(apricotQty, apricotUom, jarQty, jarCapacity);
+    }
+
+    public int howManyFullJars(int jamQtyInGrams) {
+        return jamQtyInGrams / jarCapacity;
+    }
+
+    public int remainderJam(int jamQtyInGrams) {
+        return jamQtyInGrams % jarCapacity;
     }
 }
