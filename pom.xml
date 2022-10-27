@@ -6,7 +6,11 @@
 
   <groupId>com.imalittletester</groupId>
   <artifactId>tutorial-java</artifactId>
+  <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>BiancaS</module>
+  </modules>
 
   <name>tutorial-java</name>
   <!-- FIXME change it to the project's website -->
@@ -19,7 +23,6 @@
   </properties>
 
   <dependencies>
-    <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
