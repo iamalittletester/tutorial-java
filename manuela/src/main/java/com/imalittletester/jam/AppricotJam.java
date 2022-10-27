@@ -5,8 +5,8 @@ import org.apache.commons.lang3.builder.ToStringExclude;
 //inhierence
 public class AppricotJam extends Jam {
     //fields
-    public float apricotQty;
-    public String apricotUom;
+   public float apricotQty;
+   public String apricotUom;
 
     public Jar jar;
 
@@ -19,11 +19,11 @@ public class AppricotJam extends Jam {
         super(sweetener);
     }
 
-    public AppricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricotUom, Jar jar, boolean isDietetic) {
-        super(sweetener, sweetenerQty, sweetenerUom, isDietetic); //the supper class Jam
-        //super(sweetener, sweetenerQty, sweetenerUom, fruitQty, fruitUom, isDietetic);
-       this.apricotQty = apricotQty;
-       this.apricotUom = apricotUom;
+    public AppricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQtyQty, String apricotUomUom, Jar jar, boolean isDietetic) {
+       super(sweetener, sweetenerQty, sweetenerUom, isDietetic); //the supper class Jam
+        //super(fruitQty, fruitUom,sweetener, sweetenerQty, sweetenerUom, isDietetic);
+      this.apricotQty = apricotQty;
+      this.apricotUom = apricotUom;
         this.jar = jar;
 
     }
@@ -49,8 +49,8 @@ public class AppricotJam extends Jam {
                 ", sweetenerUom='" + sweetenerUom + '\'' +
                 ", apricotQty=" + apricotQty +
                 ", apricotUom='" + apricotUom + '\'' +
-//                ", apricotQty=" + fruitQty +
-//                ", apricotUom='" + fruitUom + '\'' +
+              //", apricotQty=" + fruitQty +
+              // ", apricotUom='" + fruitUom + '\'' +
                 ", jarQty=" + jar +
                 ", jarCapacity=" + jar +
                 ", isDietetic=" + isDietetic +

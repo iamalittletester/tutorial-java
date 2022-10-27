@@ -4,13 +4,23 @@ public class Jam {
 
     //Homework T3
     //public float fruitQty;
-    //public String fruitUom;
+//   public String fruitUom;
+//   public String fruitType;
 
+//       public Jam(float fruitQty, String fruitUom, String fruitType, String sweetener, float sweetenerQty, String sweetenerUom, boolean isDietetic) {
+//        this.fruitQty = fruitQty;
+//        this.fruitUom = fruitUom;
+//        this.fruitType = fruitType;
+//        this.sweetener = sweetener;
+//        this.sweetenerQty = sweetenerQty;
+//        this.sweetenerUom = sweetenerUom;
+//        this.isDietetic = isDietetic;
+//    }
     //In clasa AppricotJam - in constructorul cu toate valorile as scrie:
 
-    //public AppricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float fruitQty, String fruitUom, Jar jar, boolean isDietetic)
+    //public AppricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float fruitQty, String fruitUom, String fruitType, Jar jar, boolean isDietetic)
     // {
-    //        super(sweetener, sweetenerQty, sweetenerUom, fruitQty, fruitUom, isDietetic);
+    //        super(sweetener, sweetenerQty, sweetenerUom, fruitQty, fruitUom, fruitType, isDietetic);
     //        this.jar = jar;
     //        }
 
