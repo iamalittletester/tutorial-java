@@ -22,20 +22,23 @@ public class AppricotJamTest {
     public AppricotJam appricotJam2 = new AppricotJam("white sugar");
     public AppricotJam appricotJam3 = new AppricotJam("sugar cane", 1.5f, "kg", 10, "kg", new Jar(30, 500), true);
     //initialized a new object of melonJam
-    public MelonJam melonJam = new MelonJam("plain sugar", 10, "kg", 10, "kg", new Bottle(20,100), false);
+    public MelonJam melonJam = new MelonJam("plain sugar", 10, "kg", 10, "kg", new Bottle(20, 100), false);
 
     @Order(1) //sa fie rulate in ordine
     @Test
+    void thirdTest() {
+//        appricotJam3.makeJam();
+//        System.out.println(appricotJam3.getSweetener());
+//        appricotJam3.setSweetener(aSweetener);
+//        System.out.println(appricotJam3.getSweetener());
+//        System.out.println("-------------------------");
+//        melonJam.makeJam();
+        System.out.println(appricotJam3.howManyFullJars(2300));
+        System.out.println(appricotJam3.remainderJam(2300));
+        System.out.println(appricotJam3.equals(appricotJam2));
+    }
 
-  void thirdTest(){
-      appricotJam3.makeJam();
-      System.out.println(appricotJam3.getSweetener());
-      appricotJam3.setSweetener("stevia");
-      System.out.println(appricotJam3.getSweetener());
-      System.out.println("-------------------------");
-      melonJam.makeJam();
-  }
-  @Order(2)
+    @Order(2)
     @Test
     void secondTest() {
         System.out.println(appricotJam);
@@ -66,9 +69,9 @@ public class AppricotJamTest {
         //   asertEquals (api.login("username1","passwoard1") + getResponse "Success");
     }
 
-    @Order (3)
+    @Order(3)
     @Test
-    void fourthTest(){
+    void fourthTest() {
         appricotJam3.makeJam();
     }
 
