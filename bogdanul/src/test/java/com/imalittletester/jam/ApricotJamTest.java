@@ -35,9 +35,12 @@ public class ApricotJamTest {
     @Order(1)
     @Test
     void thirdTest() {
-        apricotJam3.makeJam();
-        System.out.println("-------------");
-        melonJam.makeJam();
+      //  apricotJam3.makeJam();
+//        System.out.println("-------------");
+//        melonJam.makeJam();
+        System.out.println(apricotJam3.howManyFullJars(2300));
+        System.out.println(apricotJam3.remainderJam(2300));
+        System.out.println(apricotJam3.equals(apricotJam2));
     }
 
     @Order(2)

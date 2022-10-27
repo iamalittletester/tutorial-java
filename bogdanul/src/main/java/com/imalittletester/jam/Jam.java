@@ -1,5 +1,7 @@
 package com.imalittletester.jam;
 
+import java.util.Objects;
+
 public class Jam {
     // This class should have a field of type of Fruit.
     // Fruit is a class that we created, which would have some fields such as: fruitName (e.g. Melon, apricot, etc),
@@ -10,7 +12,6 @@ public class Jam {
     public String sweetener;
     public float sweetenerQty;
     public String sweetenerUom;
-
     public boolean isDietetic;
 
     public Jam(String sweetener, float sweetenerQty, String sweetenerUom, boolean isDietetic) {
@@ -27,7 +28,7 @@ public class Jam {
         this.sweetener = sweetener;
     }
 
-    public void makeJam(){
+    public void makeJam() {
         System.out.println("Adding " + sweetenerQty + " " + sweetenerUom + " of " + sweetener);
         System.out.println("Is Jam dietetic? " + isDietetic);
     }
@@ -38,5 +39,19 @@ public class Jam {
 
     public void setSweetener(String sweetener) {
         this.sweetener = sweetener;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Jam jam = (Jam) o;
+        return Float.compare(jam.sweetenerQty, sweetenerQty) == 0 && isDietetic == jam.isDietetic &&
+                sweetener.equals(jam.sweetener) && sweetenerUom.equals(jam.sweetenerUom);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sweetener, sweetenerQty, sweetenerUom, isDietetic);
     }
 }
