@@ -1,6 +1,6 @@
 package com.imalittletester.jam;
 
-public class ApricotJam extends Jam{
+public class ApricotJam extends Jam {
     //public float apricotQty;
     //public String apricotUom;
     public Jar jar;
@@ -13,9 +13,9 @@ public class ApricotJam extends Jam{
         super(sweetener);
     }
 
-    public ApricotJam(String sweetener, float sweetenerQty, String sweetenerUom, Jar jar, boolean isDietetic,
+    public ApricotJam(String sweetener, float sweetenerQty, String sweetenerUom, Jar jar,
                       float fruitQty, String fruitUom) {
-        super(sweetener, sweetenerQty, sweetenerUom, isDietetic, "apricot", fruitQty, fruitUom); //super mereu pe prima linie
+        super(sweetener, sweetenerQty, sweetenerUom, "apricot", fruitQty, fruitUom); //super mereu pe prima linie
         // didn't create a variable for fruit because it will always be "apricot" in this class
 
         //this.apricotQty = apricotQty;
@@ -47,5 +47,14 @@ public class ApricotJam extends Jam{
                 ", fruitQty=" + fruitQty +
                 ", fruitUom='" + fruitUom + '\'' +
                 '}';
+    }
+
+
+    public int howManyFullJars(int jamQtyInGrams) {
+        return jamQtyInGrams / jar.jarCapacity;
+    }
+
+    public int remainderJam(int jamQtyInGrams) {
+        return jamQtyInGrams % jar.jarCapacity;
     }
 }

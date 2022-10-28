@@ -12,9 +12,9 @@ public class MelonJam extends Jam{
         super(sweetener);
     }
 
-    public MelonJam(String sweetener, float sweetenerQty, String sweetenerUom, Bottle bottle, boolean isDietetic,
+    public MelonJam(String sweetener, float sweetenerQty, String sweetenerUom, Bottle bottle,
                     float fruitQty, String fruitUom) {
-        super(sweetener, sweetenerQty, sweetenerUom, isDietetic, "melon", fruitQty, fruitUom);
+        super(sweetener, sweetenerQty, sweetenerUom, "melon", fruitQty, fruitUom);
         // didn't create a variable for String fruit because it will always be "melon" in this class
 
         //this.melonQty = melonQty;
