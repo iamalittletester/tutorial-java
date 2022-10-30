@@ -21,11 +21,11 @@ public class Jam {
 
     public boolean isDietetic;
 
-    public Jam(String sweetener, float sweetenerQty, String sweetenerUom, boolean isDietetic) {
+    public Jam(String sweetener, float sweetenerQty, String sweetenerUom) {
         this.sweetener = sweetener;
         this.sweetenerQty = sweetenerQty;
         this.sweetenerUom = sweetenerUom;
-        this.isDietetic = isDietetic;
+        this.isDietetic = sweetener.equals("stevia") || sweetener.equals("sucralose");
     }
 
     public Jam() {
