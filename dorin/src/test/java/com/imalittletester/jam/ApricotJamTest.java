@@ -20,10 +20,11 @@ public class ApricotJamTest {
 
     public ApricotJam apricotJam = new ApricotJam();
     public ApricotJam apricotJam2 = new ApricotJam("white sugar");
-    public ApricotJam apricotJam3 = new ApricotJam("sugar cane", 1.5f, "kg", 10, "kg", new Jar(10, 690), true);
+    public ApricotJam apricotJam3 = new ApricotJam(new Jam("stevia", 10, "kg", "Apricot", 10, "KG"), new Jar(10, 690));
+    public ApricotJam apricotJam4 = new ApricotJam(new Jam("Sugar", 10, "kg", "Apricot", 10, "KG"), new Jar(10, 690));
 
     public MelonJam melonJam = new MelonJam("plain sugar", 10, "kg", 10, "kg",
-            new Bottle(20,1000), false);
+            new Bottle(20,1000));
 
    @Test
     void jarTest(){
@@ -36,6 +37,8 @@ public class ApricotJamTest {
         apricotJam3.makeJam();
         System.out.println("---------------");
         melonJam.makeJam();
+        System.out.println(apricotJam3.equals(apricotJam4));
+
 
     }
     @Order(2)
@@ -52,11 +55,12 @@ public class ApricotJamTest {
     @Order(3)
     @Test
     void firstTest(){
-//        System.out.println(aPositiveInt);
-//        System.out.println(aPositiveLong);
-//        System.out.println(aFloat);
-//        System.out.println(aDouble);
-//        System.out.println(aBoolean);
+        System.out.println(aPositiveInt);
+        System.out.println(aPositiveLong);
+        System.out.println(aFloat);
+        System.out.println(aDouble);
+        System.out.println(aBoolean);
         System.out.println("--> " + aSweetener);
+        System.out.println(apricotJam3.howManyFullJars(2300));
     }
 }

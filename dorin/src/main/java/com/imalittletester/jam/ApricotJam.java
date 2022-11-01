@@ -1,5 +1,7 @@
 package com.imalittletester.jam;
 
+import java.util.Objects;
+
 public class ApricotJam extends Jam{
     //fields
     public float apricotQty;
@@ -8,21 +10,22 @@ public class ApricotJam extends Jam{
 
 
     //methods
+    public int howManyFullJars(int jamQtyInGrams){
+        return jamQtyInGrams / jar.jarCapacity;
+    }
+    public int remainderJam(int jamQtyInGrams){
+        return jamQtyInGrams % jar.jarCapacity;
+    }
     public ApricotJam(){}
 
     public ApricotJam(String sweetener){
         this.sweetener = sweetener;
     }
 
-    public ApricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty,
-                      String apricotUom, Jar jar, boolean isDietetic ) {
+    public ApricotJam(Jam jam, Jar jar) {
 
-       super(sweetener, sweetenerQty, sweetenerUom, isDietetic);
+       super(jam.sweetener, jam.sweetenerQty, jam.sweetenerUom, jam.fruitName, jam.fruitQty, jam.fruitUom);
        this.jar = jar;
-       this.apricotQty = apricotQty;
-       this.apricotUom = apricotUom;
-       this.isDietetic = isDietetic;
-
     }
 
 @Override
@@ -46,7 +49,19 @@ public class ApricotJam extends Jam{
                 ", apricotUom='" + apricotUom + '\'' +
                 ", jarQty=" + jar.jarQty +
                 ", jarCapacity=" + jar.jarCapacity +
-                ", isDietetic=" + isDietetic +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ApricotJam that = (ApricotJam) o;
+        return Float.compare(that.apricotQty, apricotQty) == 0 && Objects.equals(apricotUom, that.apricotUom) && Objects.equals(jar, that.jar);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(apricotQty, apricotUom, jar);
     }
 }
