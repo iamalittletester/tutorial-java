@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
 import java.util.Date;
+import java.util.Objects;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ApricotJamTest {
@@ -16,19 +17,24 @@ public class ApricotJamTest {
     public String aSweetener = "sugar cane";
     public Date new_Date;
 
+
     public ApricotJam apricotJam = new ApricotJam();
     public ApricotJam apricotJam2 = new ApricotJam("white sugar");
-    public ApricotJam apricotJam3 = new ApricotJam("sugar cane", 1.5f, "kg", 10, "kg", false);
+    public ApricotJam apricotJam3 = new ApricotJam("sucralose", 1.5f, "kg", 10, "kg", false);
 
     public MelonJam melonJamRaureni = new MelonJam ("plain sugar", 10, "kg", 10, "kg", new Bottle(20, 1000), false);
-    public ApricotJam apricotJam4 = new ApricotJam ("xylitol", 7, "kg", 9, "kg", new Jar(15, 800), true);
-
+    public ApricotJam apricotJam4 = new ApricotJam ("stevia", 7, "kg", 9, "kg", new Jar(15, 500));
+    public ApricotJam apricotJam5 = new ApricotJam ("sucralose", 6, "kg", 8, "kg", new Jar (10, 800));
+    public ApricotJam apricotJam6 = new ApricotJam ("white sugar", 6, "kg", 8, "kg", new Jar (10, 800));
    @Order(1)
     @Test
     void fourthTest (){
-        apricotJam3.makeJam ();
-        System.out.println("-----------");
-        melonJamRaureni.makeJam();
+        //apricotJam3.makeJam ();
+        //System.out.println("-----------");
+        //melonJamRaureni.makeJam();
+       System.out.println(apricotJam4.howManyFullJars(2300));
+       System.out.println(apricotJam4.remainderJam(2300));
+       System.out.println(apricotJam3.equals(apricotJam4));
     }
 @Order(2)
     @Test
@@ -57,5 +63,29 @@ public class ApricotJamTest {
     void fifthTest (){
         System.out.println(apricotJam4);
         apricotJam4.makeJam();
+    }
+
+    @Order (5)
+    @Test
+    void sixthTest () {
+        //System.out.println("Is jam dietetic? " + apricotJam3.isDietetic);
+        System.out.println("Is jam dietetic? " + apricotJam4.isDietetic);
+        System.out.println("Is jam dietetic? " + apricotJam5.isDietetic);
+        System.out.println("Is jam dietetic? " + apricotJam6.isDietetic);
+    }
+
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ApricotJamTest that = (ApricotJamTest) o;
+        return aPositiveInt == that.aPositiveInt && Float.compare(that.aFloat, aFloat) == 0 && aBoolean == that.aBoolean && Objects.equals(aSweetener, that.aSweetener) && Objects.equals(new_Date, that.new_Date) && Objects.equals(apricotJam, that.apricotJam) && Objects.equals(apricotJam2, that.apricotJam2) && Objects.equals(apricotJam3, that.apricotJam3) && Objects.equals(melonJamRaureni, that.melonJamRaureni) && Objects.equals(apricotJam4, that.apricotJam4);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(aPositiveInt, aFloat, aBoolean, aSweetener, new_Date, apricotJam, apricotJam2, apricotJam3, melonJamRaureni, apricotJam4);
     }
 }
