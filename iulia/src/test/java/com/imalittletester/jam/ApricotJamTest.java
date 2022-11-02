@@ -20,8 +20,8 @@ public class ApricotJamTest {
     public ApricotJam apricotJam = new ApricotJam();
     public ApricotJam apricotJam2 = new ApricotJam();
 
-    public ApricotJam apricotJam3 = new ApricotJam("sugar cane",1.5f, "kg",10, "kg",new Jar(500,30),true );
-
+    public ApricotJam apricotJam3 = new ApricotJam("stevia", 1.5f,"kg", 10, "kg", new Jar(30, 500));
+    public ApricotJam apricotJam4 = new ApricotJam("sugar cane", 1.5f,"kg", 10, "kg", new Jar(30, 500));
     public MelonJam melonJam = new MelonJam("plain sugar",10,"kg",10, "kg", new Bottle(20,1000),false);
 
 
@@ -31,6 +31,17 @@ public class ApricotJamTest {
         apricotJam3.makeJam();
         System.out.println("------------------");
         melonJam.makeJam();
+
+        System.out.println("avem " + apricotJam3.howManyFullJars(2300) + " borcane pline.");
+        System.out.println("mai raman " + apricotJam3.remainderJam(2300) + "g.");
+        System.out.println(apricotJam3.equals(apricotJam4));
+    }
+
+    @Test
+    void forthTest() {
+        apricotJam3.makeJam();
+        System.out.println("Is jam made with stevia dietetic? " + apricotJam3.isDietetic);
+        System.out.println("Is jam made with sugar cane dietetic? " + apricotJam4.isDietetic);
     }
 
     @Order(2)
@@ -55,7 +66,14 @@ public class ApricotJamTest {
        // System.out.println(aDouble);
        // System.out.println(aBoolean);
         //System.out.println(" -->" + aSweetener);
+
+        System.out.println(apricotJam3.howManyFullJars(2300));
+        System.out.println(apricotJam3.remainderJam(2300));
+        System.out.println(apricotJam3.equals(apricotJam2));
     }
+
+
+
 
     }
 
