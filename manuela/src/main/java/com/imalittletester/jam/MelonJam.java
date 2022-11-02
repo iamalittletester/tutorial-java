@@ -9,8 +9,8 @@ public class MelonJam extends Jam {
 
     public Bottle bottle;
 
-    public MelonJam(String sweetener, float sweetenerQty, String sweetenerUom, float melonQty, String melonUom, Bottle bottle, boolean isDietetic) {
-        super(sweetener, sweetenerQty, sweetenerUom, isDietetic); //the supper class Jam
+    public MelonJam(String sweetener, float sweetenerQty, String sweetenerUom, float melonQty, String melonUom, Bottle bottle) {
+        super(sweetener, sweetenerQty, sweetenerUom); //the supper class Jam
         this.melonQty = melonQty;
         this.melonUom = melonUom;
         this.bottle = bottle;

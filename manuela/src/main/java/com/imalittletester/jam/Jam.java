@@ -36,11 +36,13 @@ public class Jam {
 
     public boolean isDietetic;
 
-    public Jam(String sweetener, float sweetenerQty, String sweetenerUom, boolean isDietetic) {
+    public Jam(String sweetener, float sweetenerQty, String sweetenerUom) {
+         String stevia = "stevia";
+         String sucralose = "sucralose";
         this.sweetener = sweetener;
         this.sweetenerQty = sweetenerQty;
         this.sweetenerUom = sweetenerUom;
-        this.isDietetic = isDietetic;
+        this.isDietetic = (this.sweetener == stevia) || (this.sweetener == sucralose);
     }
 
     public Jam() {
@@ -51,7 +53,7 @@ public class Jam {
     }
 
     public void makeJam(){
-        System.out.println("Adding " + sweetenerQty + " " + sweetenerUom + " of " +sweetener);
+        //System.out.println("Adding " + sweetenerQty + " " + sweetenerUom + " of " +sweetener);
         System.out.println("Is jam dietetic? " + isDietetic);
 
     }

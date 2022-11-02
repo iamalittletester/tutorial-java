@@ -20,9 +20,11 @@ public class AppricotJamTest {
     //stocam un nou appricotJam
     public AppricotJam appricotJam = new AppricotJam();
     public AppricotJam appricotJam2 = new AppricotJam("white sugar");
-    public AppricotJam appricotJam3 = new AppricotJam("sugar cane", 1.5f, "kg", 10, "kg", new Jar(30, 500), true);
+    public AppricotJam appricotJam3 = new AppricotJam("sugar cane", 1.5f, "kg", 10, "kg", new Jar(30, 500));
+    public AppricotJam appricotJamStevia = new AppricotJam("stevia", 1.5f, "kg", 10, "kg", new Jar(30, 500));
+    public AppricotJam appricotJamSucralose = new AppricotJam("sucralose", 1.5f, "kg", 10, "kg", new Jar(30, 500));
     //initialized a new object of melonJam
-    public MelonJam melonJam = new MelonJam("plain sugar", 10, "kg", 10, "kg", new Bottle(20, 100), false);
+    public MelonJam melonJam = new MelonJam("plain sugar", 10, "kg", 10, "kg", new Bottle(20, 100));
 
     @Order(1) //sa fie rulate in ordine
     @Test
@@ -72,7 +74,12 @@ public class AppricotJamTest {
     @Order(3)
     @Test
     void fourthTest() {
+
         appricotJam3.makeJam();
+        System.out.println("----------------------------------");
+        appricotJamStevia.makeJam();
+        System.out.println("----------------------------------");
+        appricotJamSucralose.makeJam();
     }
 
 }

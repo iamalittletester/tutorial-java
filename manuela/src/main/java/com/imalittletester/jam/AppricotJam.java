@@ -21,8 +21,8 @@ public class AppricotJam extends Jam {
         super(sweetener);
     }
 
-    public AppricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricotUom, Jar jar, boolean isDietetic) {
-        super(sweetener, sweetenerQty, sweetenerUom, isDietetic); //the supper class Jam
+    public AppricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricotUom, Jar jar) {
+        super(sweetener, sweetenerQty, sweetenerUom); //the supper class Jam
         //super(fruitQty, fruitUom,sweetener, sweetenerQty, sweetenerUom, isDietetic);
         this.apricotQty = apricotQty;
         this.apricotUom = apricotUom;
@@ -33,10 +33,10 @@ public class AppricotJam extends Jam {
     @Override
     public void makeJam() {
         super.makeJam();
-        System.out.println("Also adding: " + apricotQty + " " + apricotUom + " of apricots");
+        //System.out.println("Also adding: " + apricotQty + " " + apricotUom + " of apricots");
         //System.out.println("Also adding: " + fruitQty + " " + fruitUom + " of apricots");
-        System.out.println("Boiling for " + preparationTime() + " minutes");
-        System.out.println("Having " + jar.jarQty + " jars" + " " + "of capacity: " + jar.jarCapacity);
+       // System.out.println("Boiling for " + preparationTime() + " minutes");
+        //System.out.println("Having " + jar.jarQty + " jars" + " " + "of capacity: " + jar.jarCapacity);
 
     }
 
