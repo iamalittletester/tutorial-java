@@ -23,8 +23,8 @@ public class ApricotJam extends Jam{
     }
 
     public ApricotJam(Jam jam, Jar jar) {
+        super(jam.sweetener, jam.sweetenerQty, jam.sweetenerUom, jam.isDietetic, jam.fruitName, jam.fruitQty, jam.fruitUom);
 
-       super(jam.sweetener, jam.sweetenerQty, jam.sweetenerUom, jam.fruitName, jam.fruitQty, jam.fruitUom);
        this.jar = jar;
     }
 

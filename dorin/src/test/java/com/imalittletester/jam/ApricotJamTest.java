@@ -20,8 +20,8 @@ public class ApricotJamTest {
 
     public ApricotJam apricotJam = new ApricotJam();
     public ApricotJam apricotJam2 = new ApricotJam("white sugar");
-    public ApricotJam apricotJam3 = new ApricotJam(new Jam("stevia", 10, "kg", "Apricot", 10, "KG"), new Jar(10, 690));
-    public ApricotJam apricotJam4 = new ApricotJam(new Jam("Sugar", 10, "kg", "Apricot", 10, "KG"), new Jar(10, 690));
+    public ApricotJam apricotJam3 = new ApricotJam(new Jam("sugar", 10, "kg", true,  "Apricot", 10, "KG"), new Jar(10, 690));
+    public ApricotJam apricotJam4 = new ApricotJam(new Jam("Sugar", 10, "kg", false, "Apricot",10, "KG"), new Jar(10, 690));
 
     public MelonJam melonJam = new MelonJam("plain sugar", 10, "kg", 10, "kg",
             new Bottle(20,1000));

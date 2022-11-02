@@ -6,16 +6,19 @@ public class Jam {
     public String sweetener;
     public float sweetenerQty;
     public String sweetenerUom;
+    public boolean isDietetic;
 
 //    Add new parameters to create an abstract fruit.
     public String fruitName;
     public int fruitQty;
     public String fruitUom;
 
-    public Jam(String sweetener, float sweetenerQty, String sweetenerUom, String fruitName, int fruitQty, String fruitUom) {
+    public Jam(String sweetener, float sweetenerQty, String sweetenerUom, boolean isDietetic, String fruitName, int fruitQty, String fruitUom) {
         this.sweetener = sweetener;
         this.sweetenerQty = sweetenerQty;
         this.sweetenerUom = sweetenerUom;
+        this.isDietetic = isDietetic;
+        this.isDietetic = (sweetener.contains("stevia")||sweetener.contains("sucrose"));
 
         this.fruitName = fruitName;
         this.fruitUom = fruitUom;
@@ -37,7 +40,7 @@ public class Jam {
 
         System.out.println("Adding " + fruitQty + fruitUom + " of " + fruitName);
         System.out.println("Adding " + sweetenerQty + " " + sweetenerUom + " of " + sweetener);
-        System.out.println("Is jam dietetic? " + (sweetener.contains("stevia")||sweetener.contains("sucrose")));
+        System.out.println("Is jam dietetic? " + isDietetic);
 
     }
 
