@@ -1,18 +1,15 @@
 package com.imalittletester.jam;
 
-public class ApricotJam {
+public class ApricotJam extends Jam {
 //fields
-    public String sweetener;
-    public float sweetenerQty;
-    public String sweetenerUom;
-
     public float apricotQty;
-    public String apricontUom;
+    public String apricotUom;
 
-    public int jarQty;
-    public int jarCapacity;
 
-    public boolean isDietetic;
+    public Jar jar;
+
+
+    //public boolean isDietetic;
 
 
 
@@ -21,31 +18,34 @@ public class ApricotJam {
 
     //constructor
     public ApricotJam(String sweetener) {
-        this.sweetener = sweetener;
+        super(sweetener);
 
     }
 
-    public ApricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricontUom, int jarQty, int jarCapacity, boolean isDietetic) {
-        this.sweetener = sweetener;
-        this.sweetenerQty = sweetenerQty;
-        this.sweetenerUom = sweetenerUom;
+    public ApricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricontUom, Jar jar, boolean isDietetic) {
+        super(sweetener, sweetenerQty, sweetenerUom, isDietetic);
         this.apricotQty = apricotQty;
-        this.apricontUom = apricontUom;
-        this.jarQty = jarQty;
-        this.jarCapacity = jarCapacity;
-        this.isDietetic = isDietetic;
+        this.apricotUom = apricontUom;
+        this.jar = jar;
+
+
     }
 
+    @Override
     public void makeJam(){
         //fields
         //constructors
         //methods
         //toString
-        System.out.println("Adding " + sweetenerQty + " " + sweetenerUom + " of " + sweetener);
-        System.out.println("Also adding: " + apricotQty + " " + apricontUom + " of apricots");
+        super.makeJam();
+        System.out.println("Also adding: " + apricotQty + " " + apricotUom + " of apricots");
         System.out.println("Boiling for " + preparationTime() + " minutes");
-        System.out.println("Is dietetic? " + isDietetic);
+
     }
+
+    public void metoda1(String str1, int int1) {}
+    public void metoda1(float fl1, int int1) {}
+    public void metoda1(int int1) {}
 
     //metoda
     private int preparationTime(){
@@ -61,10 +61,12 @@ public class ApricotJam {
                 ", sweetenerQty=" + sweetenerQty +
                 ", sweetenerUom='" + sweetenerUom + '\'' +
                 ", apricotQty=" + apricotQty +
-                ", apricontUom='" + apricontUom + '\'' +
-                ", jarQty=" + jarQty +
-                ", jarCapacity=" + jarCapacity +
+                ", apricontUom='" + apricotUom + '\'' +
+                ", jarQty=" + jar +
+                ", jarCapacity=" + jar +
                 ", isDietetic=" + isDietetic +
                 '}';
     }
+    //alt+insert
+
 }
