@@ -29,13 +29,77 @@ public class ApricotJamTest {
             "2038-01-10T8:00:01.7Z");
 
     public MelonJam melonJam = new MelonJam("plain sugar", 10, "kg", 10,
-            "kg",new Bottle (20, 1000), false);
+            "kg", new Bottle(20, 1000), false);
+
+    @Test
+    void fifthTest() {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i);
+        }
+        //
+
+        //numere divizibile cu 3 intre 0 si 21 (exclusiv)
+        for (int i = 1; i < 21; i++) {
+            if (i % 3 == 0)
+                System.out.println(i);
+        }
+        System.out.println("---------------------------------");
+        for (int i = 21; i > 0; i--) {
+            if (i % 3 == 0)
+                System.out.println(i);
+        }
+        System.out.println("______________________________");
+        for (int i = 3; i < 20; i += 3) {
+            System.out.println(i);
+        }
+        System.out.println("---------------------------------");
+        int i = 1;
+        while (i < 21) {
+            System.out.println(i);
+            i++;
+        }
+    }
+
+    @Test
+    void fourthTest() {
+        System.out.println(apricotJam3.qtyInGramsUsingIf("kg", 2.5f));
+        System.out.println(apricotJam3.qtyInGramsUsingIf("micrograms", 1000));
+        System.out.println(apricotJam3.qtyInGramsUsingIf(apricotJam3.sweetenerUom, apricotJam3.sweetenerQty));
+        System.out.println(apricotJam3.qtyInGramsUsingIf("grams", 125));
+
+        System.out.println("---------------------");
+        System.out.println(apricotJam3.qtyInGramsUsingSwitch("micrograms", 2500));
+        System.out.println(apricotJam3.qtyInGramsUsingSwitch(apricotJam3.sweetenerUom, apricotJam3.sweetenerQty));
+        System.out.println(apricotJam3.qtyInGramsUsingSwitch("grams", 78));
+        System.out.println(apricotJam3.qtyInGramsUsingSwitch("fkgdfgkfd", 74323));
+        System.out.println("---------------------");
+
+        int position = 789;
+
+        if (position > 0)
+            System.out.println("Element found on position " + position);
+        else System.out.println("There is no element!");
+
+
+        // using simplified if
+        System.out.println(position > 0 ? "Element found on position: " + position : "There is no element!");
+
+        String theMessage = position > 0 ? "Element found on position: " + position : "There is no element!";
+        System.out.println("theMessage = " + theMessage);
+
+        //last simplified if is equivalent to:
+        String theMessage2 = "";
+        if (position > 0)
+            theMessage2 = "Element found on position: " + position;
+        else theMessage2 = "There is no element!";
+        System.out.println(theMessage2);
+    }
 
 
     @Order(1)
     @Test
     void thirdTest() {
-      //  apricotJam3.makeJam();
+        //  apricotJam3.makeJam();
 //        System.out.println("-------------");
 //        melonJam.makeJam();
         System.out.println(apricotJam3.howManyFullJars(2300));
