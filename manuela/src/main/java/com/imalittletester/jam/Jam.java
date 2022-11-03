@@ -37,12 +37,10 @@ public class Jam {
     public boolean isDietetic;
 
     public Jam(String sweetener, float sweetenerQty, String sweetenerUom) {
-         String stevia = "stevia";
-         String sucralose = "sucralose";
         this.sweetener = sweetener;
         this.sweetenerQty = sweetenerQty;
         this.sweetenerUom = sweetenerUom;
-        this.isDietetic = (this.sweetener == stevia) || (this.sweetener == sucralose);
+        this.isDietetic = (this.sweetener == "stevia") || (this.sweetener == "sucralose");
     }
 
     public Jam() {
