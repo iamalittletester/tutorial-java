@@ -34,6 +34,46 @@ public class Jam {
         System.out.println("Is jam dietetic? " + isDietetic);
     }
 
+    public double qtyInGramsUsingIf(String fruitUom, double qty) {
+        double mustMultiplyBy = 1;
+        if (fruitUom.equalsIgnoreCase("kg") || fruitUom.equalsIgnoreCase("kilograms")) {
+            mustMultiplyBy = 1000;
+        }
+        if (fruitUom.equalsIgnoreCase("micrograms")) {
+            mustMultiplyBy = 0.001;
+        }
+        return qty * mustMultiplyBy;
+    }
+
+    public double qtyInGramsUsingIfSimple (String fruitUom, double qty) {
+        if (fruitUom.equalsIgnoreCase("kg") || fruitUom.equalsIgnoreCase("kilograms")) {
+            return qty * 1000;
+        }
+        if (fruitUom.equalsIgnoreCase("micrograms")) {
+            return qty / 1000;
+        }
+        return qty;
+    }
+
+    public double qtyInGramsUsingSwitch (String fruitUom, double qty){
+        double valueToReturn = 0;
+        switch (fruitUom.toLowerCase()) {
+            case "kg", "kilograms" -> {valueToReturn = qty * 1000;}
+            case "grams" -> {valueToReturn = qty;}
+            case "micrograms" -> {valueToReturn = qty / 1000;}
+        }
+        return  valueToReturn;
+    }
+
+    public double qtyInGramsUsingSwitchSimple (String fruitUom, double qty){
+        switch (fruitUom.toLowerCase()) {
+            case "kg", "kilograms" -> {return qty * 1000;}
+            case "grams" -> {return qty;}
+            case "micrograms" -> {return qty / 1000;}
+            default -> {return 0;}
+        }
+     }
+
     public String getSweetener() {
         return sweetener;
     }
