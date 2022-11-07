@@ -87,8 +87,8 @@ public class AppricotJamTest {
     @Test
     void fiveTest(){
         //apelezi clasa UnitOfMeasureConverter
-        UnitOfMeasureConverter unitOfMeasureConverter = new UnitOfMeasureConverter();
-        System.out.println(unitOfMeasureConverter.qtyInGramsUsingIf2(appricotJam3.sweetenerUom, appricotJam3.sweetenerQty));
+       // UnitOfMeasureConverter unitOfMeasureConverter = new UnitOfMeasureConverter();
+       // System.out.println(unitOfMeasureConverter.qtyInGramsUsingIf2(appricotJam3.sweetenerUom, appricotJam3.sweetenerQty));
 
         System.out.println(appricotJam3.qtyInGramsUsingIf("kg", 2.5f));
         System.out.println(appricotJam3.qtyInGramsUsingIf("micrograms", 1000));
