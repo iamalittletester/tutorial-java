@@ -60,6 +60,7 @@ public class Jam {
 //      }
         //System.out.println("Is jam dietetic? " + isDietetic);
 
+
         //using Simplified if
         System.out.println(isDietetic ? "Is jam dietetic? Yes" : "Is jam dietetic? No");
 
