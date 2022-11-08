@@ -52,13 +52,16 @@ public class Jam {
 
     public void makeJam() {
         //System.out.println("Adding " + sweetenerQty + " " + sweetenerUom + " of " +sweetener);
-        if(isDietetic){
-            System.out.println("Is jam dietetic? Yes");
-        }
-        else{
-            System.out.println("Is jam dietetic? No");
-        }
+//     if(isDietetic){
+//          System.out.println("Is jam dietetic? Yes");
+//     }
+//      else{
+//          System.out.println("Is jam dietetic? No");
+//      }
         //System.out.println("Is jam dietetic? " + isDietetic);
+
+        //using Simplified if
+        System.out.println(isDietetic ? "Is jam dietetic? Yes" : "Is jam dietetic? No");
 
     }
 
