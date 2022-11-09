@@ -2,7 +2,7 @@ package com.imalittletester;
 
 public class ControlStatements {
 
-    public boolean lastDayOfMonth(String month, int day) {
+    public boolean lastDayOfMonth(String month, int day, int year) {
         switch (month) {
             case "ianuarie", "martie", "mai", "iulie", "august", "octombrie", "decembrie" -> {
                 if (day == 31) {
@@ -15,7 +15,19 @@ public class ControlStatements {
                 }
             }
             // ma mai gandesc penru februarie :)
+            case "februarie" -> {
+                if (year % 4 ==0) {
+                    if (day == 29) {
+                        return true;
+                    }
+                }
+                else {
+                    if (day == 28){
+                        return true;
+                    }
+                }
 
+            }
             default -> {return false;}
         }
         return false;
