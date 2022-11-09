@@ -1,6 +1,8 @@
 package com.imalittletester.jam;
 
 
+import java.util.Objects;
+
 public class ApricotJam extends Jam{
 
     // fields
@@ -12,8 +14,8 @@ public class ApricotJam extends Jam{
     public float apricotQty;
     public String apricotUom;
 
-    //public int jarQty;
-    //public int jarCapacity;
+    public int jarQty;
+    public int jarCapacity;
 
     // public boolean isDietetic;
 
@@ -45,9 +47,11 @@ public class ApricotJam extends Jam{
         public void makeJam() {
             //System.out.println("Adding "+ sweetenerQty + " " + sweetenerUom + " of " + sweetener);
             super.makeJam();
-            System.out.println("Also adding " + apricotQty+ " " + apricotUom + " of apricots");
-            System.out.println("Boiling for " + preparationTime() + " minutes");
-            System.out.println("Packing in " + jar.jarQty + " jars of " + jar.jarCapacity + " ml");
+            //System.out.println("Also adding " + apricotQty+ " " + apricotUom + " of apricots");
+            //System.out.println("Boiling for " + preparationTime() + " minutes");
+           // System.out.println("Packing in " + jar.jarQty + " jars of " + jar.jarCapacity + " ml");
+
+
             //System.out.println("Is dietetic? " + isDietetic);
         }
 
@@ -66,5 +70,30 @@ public class ApricotJam extends Jam{
                 //", jarCapacity=" + jarCapacity +
                 ", isDietetic=" + isDietetic +
                 '}';
+    }
+
+
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ApricotJam that = (ApricotJam) o;
+        return Float.compare(that.apricotQty, apricotQty) == 0 && jarQty == that.jarQty && jarCapacity == that.jarCapacity && Objects.equals(apricotUom, that.apricotUom) && Objects.equals(jar, that.jar);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(apricotQty, apricotUom, jarQty, jarCapacity, jar);
+    }
+//curs operatori
+
+    public int howManyFullJars (int jamQtyInGrams) {
+        return jamQtyInGrams / jar.jarCapacity;
+    }
+
+    public int remainderJam (int jamQtyInGrams) {
+        return jamQtyInGrams % jar.jarCapacity;
     }
 }
