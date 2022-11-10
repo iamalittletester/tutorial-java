@@ -30,7 +30,12 @@ public class Jam {
 
     public void makeJam() {
         System.out.println("Adding " + sweetenerQty + " " + sweetenerUom + " of " + sweetener);
-        System.out.println("Is Jam dietetic? " + isDietetic);
+        if (isDietetic){
+            System.out.println("Is Jam dietetic? Yes");
+        }
+        else {
+            System.out.println("Is Jam dietetic? No");
+        }
     }
 
     public double qtyInGramsUsingIf(String uom, double qty) {

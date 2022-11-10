@@ -1,6 +1,7 @@
 package com.imalittletester.jam;
 
 import com.imalittletester.cookie.Cookie;
+import com.imalittletester.homework.Homework;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.TestMethodOrder;
@@ -30,6 +31,22 @@ public class ApricotJamTest {
 
     public MelonJam melonJam = new MelonJam("plain sugar", 10, "kg", 10,
             "kg", new Bottle(20, 1000), false);
+
+    public Homework homework = new Homework();
+
+    @Test
+    void homeworkTest(){
+        System.out.println("is last day of month - august, 30? " + homework.isLastDayOfMonth("august", 30));
+        System.out.println("is last day of month - june, 30? " + homework.isLastDayOfMonth("june", 30));
+        System.out.println("is last day of month - february, 30? " + homework.isLastDayOfMonth("february", 30));
+
+        System.out.println("nr divizibile cu 7 intre 1 si 21: " + homework.getNumberOfNumbers(21));
+        System.out.println("nr divizibile cu 7 intre 1 si 100: " + homework.getNumberOfNumbers(100));
+        System.out.println("nr divizibile cu 7 intre 1 si 5: " + homework.getNumberOfNumbers(5));
+
+        melonJam.makeJam();
+        apricotJam3.makeJam();
+    }
 
     @Test
     void fifthTest() {
