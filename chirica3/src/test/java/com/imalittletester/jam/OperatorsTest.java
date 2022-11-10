@@ -26,7 +26,7 @@ public class OperatorsTest {
         System.out.println("is map empty? " + anotherMap.isEmpty());
 
         for (Map.Entry<String, Integer> entry : anotherMap.entrySet()) {
-            System.out.println("key= " + entry.getKey() + " and value= " + entry.getValue());
+            System.out.println("key is " + entry.getKey() + " and value is " + entry.getValue());
         }
 
         for (String key : anotherMap.keySet()) {
