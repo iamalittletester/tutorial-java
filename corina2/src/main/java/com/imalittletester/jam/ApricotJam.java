@@ -3,6 +3,7 @@ package com.imalittletester.jam;
 import java.util.Objects;
 
 public class ApricotJam extends Jam {
+
     public float apricotQty;
     public String apricotUom;
 
