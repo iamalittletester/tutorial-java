@@ -61,7 +61,7 @@ public class OperatorsTest {
                 pozInList.add(i);
             }
         }
-        System.out.println("cate sunt divizibile la 7? " + divizibile);
+        System.out.println("cate elemente sunt divizibile la 7? " + divizibile);
         System.out.println("pe ce pozitii sunt divizibilele: "+ pozInList);
 
         int divizibil = 0;
