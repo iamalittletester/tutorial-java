@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class CookieModel {
 
+    private final String path;
     public String name;
     public String value;
     public String domain;
