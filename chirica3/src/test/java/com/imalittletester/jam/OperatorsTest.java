@@ -2,7 +2,80 @@ package com.imalittletester.jam;
 
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Array;
+import java.sql.SQLOutput;
+import java.util.*;
+
+import static java.util.List.*;
+
 public class OperatorsTest {
+
+    @Test
+    void mapTest(){
+        Map<String, Integer> simpleMap = new HashMap<>();
+        System.out.println("simpleMap = " + simpleMap);
+        simpleMap.put("first", 1);
+        System.out.println("simpleMap = " + simpleMap);
+
+        Map<String, Integer> anotherMap = Map.of("firstkey", 1, "secondkey", 2, "thirdkey", 3);
+        System.out.println("anotherMap = " + anotherMap);
+        System.out.println("avem key: " + anotherMap.containsKey("thirdkey"));
+        System.out.println("avem valoare: " + anotherMap.containsValue(2));
+        System.out.println("valoarea lui secondkey este: " + anotherMap.get("secondkey"));
+        System.out.println("map size: " + anotherMap.size());
+        System.out.println("is map empty? " + anotherMap.isEmpty());
+
+        for (Map.Entry<String, Integer> entry : anotherMap.entrySet()) {
+            System.out.println("key= " + entry.getKey() + " and value= " + entry.getValue());
+        }
+
+        for (String key : anotherMap.keySet()) {
+            System.out.println(key);
+        }
+
+        for (int value : anotherMap.values()) {
+            System.out.println(value);
+        }
+    }
+
+    @Test
+    void listTest() {
+        List<String> lista1 = new ArrayList<>();
+        lista1.add("cluj");
+        lista1.add("alba");
+        System.out.println("lista1 = " + lista1);
+
+        List<String> lista2 = Arrays.asList("peach", "apple", "melon");
+        System.out.println("lista2 = " + lista2);
+
+        System.out.println(lista2.get(2));
+        System.out.println(lista2.size());
+        System.out.println(lista2.contains("apple"));
+
+        List<Integer> list4 = Arrays.asList(5, 13, 25, 8, 14, 7, 9);
+        int divizibile = 0;
+        List<Integer> pozInList = new ArrayList<>();
+        for (int i = 0; i < list4.size(); i++) {
+            if (list4.get(i) % 7 == 0) {
+                divizibile++;
+                pozInList.add(i);
+            }
+        }
+        System.out.println("cate sunt divizibile la 7? " + divizibile);
+        System.out.println("pe ce pozitii sunt divizibilele: "+ pozInList);
+
+        int divizibil = 0;
+        for (int nrInLista : list4) {
+            if (nrInLista % 7  == 0) {
+                divizibil++;
+            }
+        }
+
+        System.out.println(divizibil);
+
+        List<Integer> lista3 = List.of( 1, 2, 3, 4, 5, 6, 7, 8);
+        System.out.println("lista3 = " + lista3);
+    }
 
     @Test
     void firstTest() {

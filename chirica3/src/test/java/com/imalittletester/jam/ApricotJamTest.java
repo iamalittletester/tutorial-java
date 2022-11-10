@@ -9,10 +9,13 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ApricotJamTest {
+   // ArrayList
     public String text = "vata de zahar";
 
     public ApricotJam apricotJam = new ApricotJam("");
