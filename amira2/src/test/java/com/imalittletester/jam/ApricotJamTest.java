@@ -1,5 +1,6 @@
 package com.imalittletester.jam;
 
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
 public class ApricotJamTest {
@@ -14,18 +15,30 @@ public class ApricotJamTest {
     public ApricotJam apricotJam = new ApricotJam("");
     public ApricotJam apricotJam2 = new ApricotJam("white sugar");
 
-    public ApricotJam apricotJam3 = new ApricotJam("sugar cane", 1.5f, "kg", 10, "kg", new Jar(20, 50), false);
+    public ApricotJam apricotJam3 = new ApricotJam("sugar cane", 1.5f, "kg", 10, "kg", new Jar(30, 500));
 
+    public ApricotJam apricotJam4 = new ApricotJam("sucralose", 1.5f, "kg", 10, "kg", new Jar(30, 500));
     public MelonJam melonJam = new MelonJam("plain sugar", 10, "kg", 10, "kg", new Bottle(20, 1000), false);
 
-   @Test
+    @Order(1)
+    @Test
    void thirdTest(){
        apricotJam3.makeJam();
        System.out.println("-----------------");
        melonJam.makeJam();
+
+       System.out.println(apricotJam3.howManyFullJars(2300));
+       System.out.println(apricotJam3.remainderJam(2300));
+
+        System.out.println(apricotJam3.equals(apricotJam4));
+
+        System.out.println("-----------------");
+
+        System.out.println("Is this jam dietetic: " + apricotJam3.isDietetic);
+        System.out.println("Is this jam dietetic: " + apricotJam4.isDietetic);
    }
 
-
+    @Order(2)
     @Test
 
     void secondTest() {
@@ -41,7 +54,7 @@ public class ApricotJamTest {
 
         melonJam.makeJam();
     }
-
+    @Order(3)
     @Test
     void firstTest() {
         System.out.println(aPositiveValue);
