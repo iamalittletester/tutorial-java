@@ -4,10 +4,10 @@ import java.util.Objects;
 
 public class ApricotJam extends Jam {
     //fields
-    public float apricotQty;
-    public String apricotUom;
+   //  public float apricotQty;
+   // public String apricotUom;
 
-    public Jar jar;
+     public Jar jar;
 
     //methods
     public ApricotJam() {
@@ -16,18 +16,15 @@ public class ApricotJam extends Jam {
         super(sweetener);
     }
 
-    public ApricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty,
-                      String apricotUom, Jar jar) {
-        super(sweetener, sweetenerQty, sweetenerUom);
-        this.apricotQty = apricotQty;
-        this.apricotUom = apricotUom;
+    public ApricotJam(String sweetener, float sweetenerQty, String sweetenerUom, Fruit fruit, Jar jar) {
+        super(sweetener, sweetenerQty, sweetenerUom, fruit);
         this.jar = jar;
      }
 
      @Override
     public void makeJam() {
         super.makeJam();
-        System.out.println("Also adding " + apricotQty + " " + apricotUom + " of apricots");
+        System.out.println("Also adding " + fruit.quantity + " " + fruit.uom + " of " + fruit.name);
         System.out.println("Boiling for " + preparationTime() + " minutes");
         System.out.println("Storing in " + jar.jarQty + " jars of " + jar.jarCapacity + "g.");
     }
@@ -36,20 +33,10 @@ public class ApricotJam extends Jam {
         return 30;
     }
 
-    @Override
-    public String toString() {
-        return "ApricotJam{" +
-                "apricotQty=" + apricotQty +
-                ", apricotUom='" + apricotUom + '\'' +
-                ", jar=" + jar +
-                ", sweetener='" + sweetener + '\'' +
-                ", sweetenerQty=" + sweetenerQty +
-                ", sweetenerUom='" + sweetenerUom + '\'' +
-                ", isDietetic=" + isDietetic +
-                '}';
-    }
+   // @Override
+   //tostring
 
-    @Override
+  /*  @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -61,7 +48,7 @@ public class ApricotJam extends Jam {
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), apricotQty, apricotUom, jar);
-    }
+    } */
 
     public int howManyFullJars(int qtyInGrams){
         return qtyInGrams / jar.jarCapacity;

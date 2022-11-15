@@ -36,4 +36,16 @@ public class GarminCookie {
     public boolean isProvidedParamSubDomainOfDomain(String param){
         return domain.contains(param);
     }
+
+    public void multipleOf7 (int max){
+        for (int i = 1 ; i <= max ; i++){
+            if (i % 7 == 0 ) {
+                System.out.println(i);
+            }
+        }
+    }
+
+
+
+
 }

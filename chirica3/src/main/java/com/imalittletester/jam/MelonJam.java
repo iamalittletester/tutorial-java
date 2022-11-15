@@ -1,8 +1,8 @@
 package com.imalittletester.jam;
 
 public class MelonJam extends Jam {
-    public float melonQty;
-    public String melonUom;
+    //public float melonQty;
+    //public String melonUom;
 
     public Bottle bottle;
 
@@ -13,11 +13,9 @@ public class MelonJam extends Jam {
         super(sweetener);
     }
 
-    public MelonJam(String sweetener, float sweetenerQty, String sweetenerUom, float melonQty, String melonUom,
+    public MelonJam(String sweetener, float sweetenerQty, String sweetenerUom, Fruit fruit,
                    Bottle bottle) {
-        super(sweetener, sweetenerQty, sweetenerUom);
-        this.melonQty = melonQty;
-        this.melonUom = melonUom;
+        super(sweetener, sweetenerQty, sweetenerUom, fruit);
         this.bottle = bottle;
     }
 
@@ -25,7 +23,7 @@ public class MelonJam extends Jam {
     @Override
     public void makeJam(){
         super.makeJam();
-        System.out.println("Also adding " + melonQty + " " + melonUom + " of melon");
+        System.out.println("Also adding " + fruit.quantity + " " + fruit.uom + " of " + fruit.name);
         System.out.println("Bottling in " + bottle.bottleQty + " bottles of " + bottle.bottleCapacity + "ml.");
     }
 }
