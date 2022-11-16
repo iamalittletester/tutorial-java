@@ -59,6 +59,11 @@ public class Watch {
         }
     }
     public void getWatchData() {
-        System.out.println("Number of steps until: " + timeStamp + " is: " + stepsToday + " You burned " + calories + " calories." + " Total distance today: " + unitConvertorForOneDay() +" " + distanceUom + " " + " Total distance for the week:  " + unitConvertorForOneWeek() + distanceUom + " Current date and time is: " + currentTime + "." + " Number of idle alerts: " + idleAlerts());
+        System.out.println("Number of steps until: " + timeStamp + " is: " + stepsToday);
+        System.out.println("Calories burned: " + calories);
+        System.out.println("Distance today: " + unitConvertorForOneDay() + " " + distanceUom);
+        System.out.println("Distance this week: " + unitConvertorForOneWeek()+" " + distanceUom);
+        System.out.println("Current date: " + currentTime);
+        System.out.println("Number of idle alerts: " + idleAlerts());
     }
 }
