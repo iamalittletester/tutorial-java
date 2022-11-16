@@ -1,5 +1,7 @@
 package com.imalittletester.jam;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Jam {
@@ -35,12 +37,24 @@ public class Jam {
     public String sweetenerUom;
 
     public boolean isDietetic;
+   // public List<Fruits> fruits;
 
-    public Jam(String sweetener, float sweetenerQty, String sweetenerUom) {
+    List<Fruits> fruits = new ArrayList<>();
+//    public Jam(String sweetener, float sweetenerQty, String sweetenerUom, List<Fruits> fruits) {
+//        this.sweetener = sweetener;
+//        this.sweetenerQty = sweetenerQty;
+//        this.sweetenerUom = sweetenerUom;
+//        this.isDietetic = (this.sweetener == "stevia") || (this.sweetener == "sucralose");
+//        this.fruits = fruits;
+//    }
+
+
+    public Jam(String sweetener, float sweetenerQty, String sweetenerUom, List<Fruits> fruits) {
         this.sweetener = sweetener;
         this.sweetenerQty = sweetenerQty;
         this.sweetenerUom = sweetenerUom;
         this.isDietetic = (this.sweetener == "stevia") || (this.sweetener == "sucralose");
+        this.fruits = fruits;
     }
 
     public Jam() {
@@ -50,7 +64,9 @@ public class Jam {
         this.sweetener = sweetener;
     }
 
+
     public void makeJam() {
+
         //System.out.println("Adding " + sweetenerQty + " " + sweetenerUom + " of " +sweetener);
 //     if(isDietetic){
 //          System.out.println("Is jam dietetic? Yes");
@@ -113,7 +129,6 @@ public class Jam {
     public void setSweetener(String sweetener) {
         this.sweetener = sweetener;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

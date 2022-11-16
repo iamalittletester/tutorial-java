@@ -10,8 +10,8 @@ import java.util.Objects;
 public class AppricotJam extends Jam {
 
     //fields
-    public float apricotQty;
-    public String apricotUom;
+//    public float apricotQty;
+//    public String apricotUom;
 
     public Jar jar;
 
@@ -24,19 +24,26 @@ public class AppricotJam extends Jam {
         super(sweetener);
     }
 
-    public AppricotJam(String sweetener, float sweetenerQty, String sweetenerUom, float apricotQty, String apricotUom, Jar jar) {
-        super(sweetener, sweetenerQty, sweetenerUom); //the supper class Jam
-        //super(fruitQty, fruitUom,sweetener, sweetenerQty, sweetenerUom, isDietetic);
-        this.apricotQty = apricotQty;
-        this.apricotUom = apricotUom;
-        this.jar = jar;
+//    public AppricotJam(String sweetener, float sweetenerQty, String sweetenerUom,List<Fruits> fruits, Jar jar) {
+//        super(sweetener, sweetenerQty, sweetenerUom, fruits); //the supper class Jam
+//        //super(fruitQty, fruitUom,sweetener, sweetenerQty, sweetenerUom, isDietetic);
+////        this.apricotQty = apricotQty;
+////        this.apricotUom = apricotUom;
+//        this.jar = jar;
+//
+//    }
 
+
+    public AppricotJam(String sweetener, float sweetenerQty, String sweetenerUom, List<Fruits> fruits, Jar jar) {
+        super(sweetener, sweetenerQty, sweetenerUom, fruits);
+        this.jar = jar;
     }
 
     @Override
     public void makeJam() {
         super.makeJam();
-        //System.out.println("Also adding: " + apricotQty + " " + apricotUom + " of apricots");
+        fruits.add(new Fruits("appricot", 1.5, "kg"));
+        System.out.println("Also adding: " + fruits.get(0).fruitsQty + " " + fruits.get(0).fruitUom + " of " + fruits.get(0).fruitName);
         //System.out.println("Also adding: " + fruitQty + " " + fruitUom + " of apricots");
        // System.out.println("Boiling for " + preparationTime() + " minutes");
         //System.out.println("Having " + jar.jarQty + " jars" + " " + "of capacity: " + jar.jarCapacity);
@@ -53,8 +60,8 @@ public class AppricotJam extends Jam {
                 "sweetener='" + sweetener + '\'' +
                 ", sweetenerQty=" + sweetenerQty +
                 ", sweetenerUom='" + sweetenerUom + '\'' +
-                ", apricotQty=" + apricotQty +
-                ", apricotUom='" + apricotUom + '\'' +
+              //  ", apricotQty=" + fruits.get(0).fruitsQty+
+               /// ", apricotUom='" + fruits.get(0).fruitUom + '\'' +
                 //", apricotQty=" + fruitQty +
                 // ", apricotUom='" + fruitUom + '\'' +
                 ", jarQty=" + jar +
@@ -63,18 +70,18 @@ public class AppricotJam extends Jam {
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        AppricotJam that = (AppricotJam) o;
-        return Float.compare(that.apricotQty, apricotQty) == 0 && Objects.equals(apricotUom, that.apricotUom) && Objects.equals(jar, that.jar);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(apricotQty, apricotUom, jar);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        AppricotJam that = (AppricotJam) o;
+//        return Float.compare(that.fruits.get(0).fruitsQty, fruits.get(0).fruitsQty) == 0 && Objects.equals(fruits.get(0).fruitUom, that.fruits.get(0).fruitUom) && Objects.equals(jar, that.jar);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(apricotQty, apricotUom, jar);
+//    }
 
     public int howManyFullJars(int jamQtyInGrams) {
         return jamQtyInGrams / jar.jarCapacity;

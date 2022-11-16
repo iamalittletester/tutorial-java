@@ -137,13 +137,13 @@ public class OperatorsTest {
     void mapTest(){
         Map<String, Integer> simpleMap = new HashMap<>();
         simpleMap.put("firstKey", 1);
-        System.out.println(simpleMap.containsKey("firstKey"));
-        System.out.println("simpleMap = " + simpleMap);
+      //  System.out.println(simpleMap.containsKey("firstKey"));
+      //  System.out.println("simpleMap = " + simpleMap);
         
         Map<String, Integer> anotherMap = Map.of("firstKey", 1, "secondKey",2, "thirdKey", 3);
-        System.out.println("anotherMap = " + anotherMap);
-        System.out.println("Is key present: " + anotherMap.containsKey("secondKey"));
-        System.out.println("Is value present: " + anotherMap.containsValue(5));
+       // System.out.println("anotherMap = " + anotherMap);
+        //System.out.println("Is key present: " + anotherMap.containsKey("secondKey"));
+       // System.out.println("Is value present: " + anotherMap.containsValue(5));
         System.out.println("The value of 'secondKey' is: " +anotherMap.get("secondKey"));
         System.out.println("The map size is: " + anotherMap.size());
         System.out.println("Is the map empty: " + anotherMap.isEmpty());
