@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class JamTest {
@@ -23,16 +26,27 @@ public class JamTest {
     public Jam melonJamRaureni = new Jam ("plain sugar", 10, "kg", new Fruit("melon", 8, "kg"), new Recipient ("bottle", 20, 1000), false);
     public Jam apricotJam4 = new Jam ("xylitol", 7, "kg", new Fruit("apricot", 8, "kg"), new Recipient ("jar", 15, 800), true);
 
-   @Order(1)
+
+  @Order(1)
+    @Test
+    void mapCostTest (){
+      float fruitQty = 8;
+      Jam jam1 = new Jam (fruitQty, List.of("apple", "peach", "melon"));
+        Map<String, Double> fruitPricePerKg = Map.of("apple", 5.0, "peach", 3.5, "melon", 7.0);
+        System.out.println("Cost of apples is " + fruitQty * fruitPricePerKg.get("apple"));
+        }
+
+
+    @Order(2)
     @Test
     void fourthTest (){
         apricotJam3.makeJam ();
         System.out.println("-----------");
         melonJamRaureni.makeJam();
     }
-@Order(2)
+@Order(3)
     @Test
-    void secondTest () {
+    void thirdTest () {
         System.out.println(apricotJam);
         System.out.println(apricotJam2);
         System.out.println(apricotJam3);
@@ -42,9 +56,9 @@ public class JamTest {
         melonJamRaureni.makeJam();
 
     }
-@Order(3)
+@Order(4)
     @Test
-    void firstTest() {
+    void secondTest() {
 
      //   System.out.println(aPositiveInt);
      //   System.out.println(aFloat);
@@ -52,9 +66,9 @@ public class JamTest {
         System.out.println("-" + aSweetener);
     }
 
-    @Order(4)
+    @Order(5)
     @Test
-    void fifthTest (){
+    void firstTest (){
         //System.out.println(apricotJam4);
        // apricotJam4.makeJam();
         melonJamRaureni.makeJam();
