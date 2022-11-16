@@ -34,8 +34,11 @@ public class ApricotJam extends Jam{
         this.apricotUom = apricotUom;
         this.jar = jar;
     }
-    
-@Override
+
+    public ApricotJam(String sugar_cane, float v, String kg, int i, String kg1, int i1, int i2, boolean b) {
+    }
+
+    @Override
     public void makeJam() {
         super.makeJam();
         System.out.println("Also adding " + apricotQty + " " + apricotUom + " of apricots");

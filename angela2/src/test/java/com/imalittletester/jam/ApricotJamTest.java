@@ -1,12 +1,12 @@
 package com.imalittletester.jam;
 
+import com.imalittletester.utils.UnitOfMeasureConverter;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
-import java.util.Date;
-import java.util.Objects;
+import java.util.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ApricotJamTest {
@@ -69,11 +69,92 @@ public class ApricotJamTest {
     @Test
     void sixthTest () {
         //System.out.println("Is jam dietetic? " + apricotJam3.isDietetic);
-        System.out.println("Is jam dietetic? " + apricotJam4.isDietetic);
-        System.out.println("Is jam dietetic? " + apricotJam5.isDietetic);
-        System.out.println("Is jam dietetic? " + apricotJam6.isDietetic);
+       // System.out.println("Is jam dietetic? " + apricotJam4.isDietetic);
+       // System.out.println("Is jam dietetic? " + apricotJam5.isDietetic);
+       // System.out.println("Is jam dietetic? " + apricotJam6.isDietetic);
+        apricotJam6.makeJam();
     }
 
+    @Order(6)
+    @Test
+    void seventhTest (){
+        UnitOfMeasureConverter unitOfMeasureConverter = new UnitOfMeasureConverter();
+
+        System.out.println(apricotJam3.qtyInGramsUsingIf("kg", 2.5f));
+        System.out.println(apricotJam3.qtyInGramsUsingIf("micrograms", 1000));
+        System.out.println(apricotJam3.qtyInGramsUsingIf(apricotJam3.sweetenerUom, apricotJam3.sweetenerQty));
+        System.out.println(apricotJam3.qtyInGramsUsingIf("grams", 125));
+
+        int position = 789;
+        if (position > 0 )
+            System.out.println("Element found on position: " + position);
+        else System.out.println("THERE IS NO ELEMENT!!!!");
+
+        //Using simplified if
+        System.out.println(position > 0 ? "Element found on position: " + position : "THERE IS NO ELEMENT!");
+
+        String theMesssage = position > 0 ? "Element found on position: " + position : "THERE IS NO ELEMENT!"; //this is equivalent with below if else
+
+        String theMessage2 = "";
+        if (position > 0)
+            theMessage2 = "Element found on position: " + position;
+        else
+            theMessage2 = "THERE IS NO ELEMENT!";
+        System.out.println(theMessage2);
+
+            System.out.println("----------------");
+        System.out.println(apricotJam3.qtyInGramsUsingIfSimple("micrograms", 2500));
+        System.out.println(apricotJam3.qtyInGramsUsingIfSimple(apricotJam3.sweetenerUom, apricotJam3.sweetenerQty));
+        System.out.println(apricotJam3.qtyInGramsUsingIfSimple("grams", 78));
+        System.out.println(apricotJam3.qtyInGramsUsingIfSimple("fdsfsf", 4324324));
+        System.out.println("----------------");
+
+        System.out.println("--------------------------------------------");
+        System.out.println(apricotJam3.qtyInGramsUsingSwitchSimple("micrograms", 2500));
+        System.out.println(apricotJam3.qtyInGramsUsingSwitchSimple(apricotJam3.sweetenerUom, apricotJam3.sweetenerQty));
+        System.out.println(apricotJam3.qtyInGramsUsingSwitchSimple("grams", 78));
+        System.out.println(apricotJam3.qtyInGramsUsingSwitchSimple("kdsuhfjsdf", 74328));
+        System.out.println("--------------------------------------------");
+    }
+
+    @Test
+    void eightTest () {
+       for (int i = 0; i < 10; i++) {
+           System.out.println(i);
+       }
+
+        System.out.println("--------------------");
+
+       // numere divizibile cu 3 intre 0 si 21 (exclusiv)
+        for (int  i=1; i < 21; i++) {
+            if (i % 3 == 0)
+                System.out.println(i);
+        }
+
+        System.out.println("--------------------");
+
+        for (int i = 20; i > 0; i--) {
+            if (i % 3 == 0)
+                System.out.println(i);
+        }
+
+        System.out.println("--------------------");
+
+        for (int i=3; i < 20; i+=3) {
+            System.out.println(i);
+        }
+
+        System.out.println("--------------------");
+        int i = 1;
+        while (i < 21) {
+            if (i % 3 == 0) {
+                System.out.println(i);
+            }
+            i++;
+        }
+
+
+}
 
 
     @Override

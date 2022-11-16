@@ -2,6 +2,9 @@ package com.imalittletester.jam;
 
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
 public class Jam{
@@ -15,14 +18,15 @@ public class Jam{
     public String sweetenerUom;
     public Boolean isDietetic;
 
-
     public Jam(String sweetener, float sweetenerQty, String sweetenerUom) {
         this.sweetener = sweetener;
         this.sweetenerQty = sweetenerQty;
         this.sweetenerUom = sweetenerUom;
         this.isDietetic = (sweetener.equals("stevia") || sweetener.equals("sucralose"));
 
+
     }
+
 
     public Jam() {
     }
@@ -31,12 +35,58 @@ public class Jam{
         this.sweetener = sweetener;
     }
 
+    public double qtyInGramsUsingIf (String uom, double qty) {
+        double mustMultiplyBy = 1;
+        if (uom.equalsIgnoreCase ("kg") || uom.equalsIgnoreCase ("kilograms")) {
+            mustMultiplyBy = 1000;
+        }
+        if (uom.equalsIgnoreCase("micrograms")) {
+            mustMultiplyBy = 0.0001;
+        }
+        return qty * mustMultiplyBy;
 
+    }
+
+    public double qtyInGramsUsingIfSimple (String uom, double qty) {
+        if (uom.equalsIgnoreCase ("kg") || uom.equalsIgnoreCase ("kilograms")) {
+            return qty * 1000;
+        }
+        if (uom.equalsIgnoreCase("micrograms")) {
+            return qty / 1000;
+        }
+
+        return qty;
+}
+
+public double qtyInGramsUsingSwitch (String uom, double qty) {
+        double valueToReturn = 0;
+        switch (uom.toLowerCase()) {
+            case "kg", "kilograms" -> {valueToReturn = qty * 1000;}
+            case "grams" -> {valueToReturn = qty;}
+            case "micrograms" -> {valueToReturn = qty / 10000;}
+        }
+        return valueToReturn;
+}
+
+    public double qtyInGramsUsingSwitchSimple (String uom, double qty) {
+        switch (uom.toLowerCase()) {
+            case "kg", "kilograms" -> {return qty * 1000;}
+            case "grams" -> {return qty;}
+            case "micrograms" -> {return qty / 10000;}
+            default -> {return 0;}
+        }
+
+    }
 
 
   public void makeJam (){
        System.out.println("Adding " + sweetenerQty + " " + sweetenerUom + " of " + sweetener);
-    }
+      if (isDietetic == true) {
+          System.out.println("Is jam dietetic? Yes");}
+      else {
+          System.out.println("Is jam dietetic? No");
+      }
+  }
 
     @Override
     public boolean equals(Object o) {
