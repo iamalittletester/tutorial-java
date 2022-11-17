@@ -26,7 +26,8 @@ public class Jam {
         this.sweetener = sweetener;
     }
 
-    public void makeJam() {
+    public void makeJam() throws InterruptedException {
+        Thread.sleep(1000);
         System.out.println("Adding " + sweetenerQty + " " + sweetenerUom + " of " + sweetener);
         System.out.println("Is jam dietetic? " + isDietetic);
     }
@@ -42,14 +43,21 @@ public class Jam {
         return qty * mustMultiplyBy;
     }
 
+    //kg, kilograms, micrograms, grams, jmdsfmhdsf
     public double qtyInGramsUsingIfSimple(String uom, double qty) {
-        if (uom.equalsIgnoreCase("kg") || uom.equalsIgnoreCase("kilograms")) {
+            if (uom.equalsIgnoreCase("kg") || uom.equalsIgnoreCase("kilograms")) {
             return qty * 1000;
         }
         if (uom.equalsIgnoreCase("micrograms")) {
             return qty / 1000;
         }
-        return qty;
+        if (uom.equalsIgnoreCase("grams")) {
+            return qty;
+        }
+        //
+        //
+        //
+        throw new RuntimeException("The unit of measure provided was not valid!");
     }
 
     public double qtyInGramsUsingSwitch(String uom, double qty) {

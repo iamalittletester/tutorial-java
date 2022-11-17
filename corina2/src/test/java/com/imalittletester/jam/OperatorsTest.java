@@ -1,8 +1,14 @@
 package com.imalittletester.jam;
 
+import api.sunrise.GetSunriseSunset;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.*;
+
+import static org.apache.commons.io.FileUtils.readFileToString;
 
 public class OperatorsTest {
 
@@ -53,7 +59,7 @@ public class OperatorsTest {
     }
 
     @Test
-    void mapTest() {
+    void mapTest() throws IOException {
         Map<String, Integer> simpleMap = new HashMap<>();
         simpleMap.put("first", 1);
         System.out.println("simpleMap = " + simpleMap);
@@ -79,10 +85,24 @@ public class OperatorsTest {
             System.out.println(value);
         }
 
+        String fileToString = readFileToString(new File("src/test/resources/simple.txt"),
+                Charset.defaultCharset());
+        System.out.println("fileToString = " + fileToString);
+
+        GetSunriseSunset getSunriseSunset = new GetSunriseSunset();
+        getSunriseSunset.getSunriseSunsetInfo("38.907192", "-117.903274832");
     }
 
     @Test
     void firstTest() {
+
+        try {
+            System.out.println(9 / 0);
+        } catch (Exception e) {
+//            e.printStackTrace();
+            throw new RuntimeException("Nu am putut imparti 9 la 0");
+        }
+
         int int1 = 0;
         int int2 = 0;
 
@@ -118,6 +138,8 @@ public class OperatorsTest {
         System.out.println(!bool2);
         boolean e = !"eeee".contains("e");
         System.out.println("String equals: " + string1.equals(string2));
+
+
     }
 
     @Test

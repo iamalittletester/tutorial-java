@@ -1,16 +1,21 @@
 package com.imalittletester.jam;
 
+import com.imalittletester.Senzor;
 import com.imalittletester.utils.UnitOfMeasureConverter;
+import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
 import java.io.File;
+import java.nio.charset.Charset;
 import java.util.Date;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ApricotJamTest {
+
+
     public int aPositiveInt = -10;
     public long aPositiveLong = -100000000;
     public float aFloat = 500;
@@ -28,6 +33,8 @@ public class ApricotJamTest {
 
     @Test
     void fifthTest() {
+        System.out.println(Senzor.NUMELE_CONSTANTEI);
+
         for(int i = 0; i < 10; i++) {
             System.out.println(i);
         }
@@ -56,7 +63,7 @@ public class ApricotJamTest {
             if (i % 3 == 0) {
                 System.out.println(i);
             }
-//            i++;
+            i++;
         }
     }
 
@@ -115,11 +122,15 @@ public class ApricotJamTest {
         System.out.println(apricotJam3.remainderJam(2300));
         System.out.println(apricotJam3.equals(apricotJam2));
         System.out.println(apricotJam3.equals(apricotJam4));
+
+        System.out.println(apricotJam3.qtyInGramsUsingIfSimple("grams", 1000));
+        System.out.println(apricotJam3.qtyInGramsUsingIfSimple("gramz", 1000));
+
     }
 
     @Order(2)
     @Test
-    void secondTest() {
+    void secondTest() throws InterruptedException {
         System.out.println(apricotJam);
 
         System.out.println(apricotJam2);

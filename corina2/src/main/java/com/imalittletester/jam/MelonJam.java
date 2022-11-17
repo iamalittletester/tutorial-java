@@ -24,7 +24,7 @@ public class MelonJam extends Jam {
 
 
     @Override
-    public void makeJam() {
+    public void makeJam() throws InterruptedException {
         super.makeJam();
         System.out.println("Adding " + melonQty + " " + melonUom + " of melon");
         System.out.println("Bottling in: " + bottle.bottleQty + " bottles of capacity: " + bottle.bottleCapacity);

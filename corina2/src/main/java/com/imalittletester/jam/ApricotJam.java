@@ -27,7 +27,7 @@ public class ApricotJam extends Jam {
     }
 
     @Override
-    public void makeJam() {
+    public void makeJam() throws InterruptedException {
         super.makeJam();
         System.out.println("Also adding: " + apricotQty + " " + apricotUom + " of apricots");
         System.out.println("Boiling for " + preparationTime() + " minutes");
