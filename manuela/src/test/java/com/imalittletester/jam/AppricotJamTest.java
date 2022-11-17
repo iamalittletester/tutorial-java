@@ -29,8 +29,8 @@ public class AppricotJamTest {
     public MelonJam melonJam = new MelonJam("plain sugar", 10, "kg", new ArrayList<>(), new Bottle(20, 100));
 
     //homework with MAP
-    //List<Fruits> fruits = new ArrayList<>();
-  //public AppricotJam appricotJamTest = new AppricotJam ("sugar cane", 1.5f, "kg",fruits.add("appricot", 10, "kg"), new Jar(30, 500));
+ List<Fruits> fruits = List.of();
+public AppricotJam appricotJamTest = new AppricotJam ("sugar cane", 1.5f, "kg", List.of(new Fruits("appricot", 10, "kg")), new Jar(30, 500));
             //("sugar cane", 1.5f, "kg",  List<Fruits> fruits, new Jar(30, 500));
 
     @Order(1) //sa fie rulate in ordine
@@ -173,9 +173,9 @@ public class AppricotJamTest {
     void mapOfFruit() {
         //Nu am stiut cum sa adaug in initializarea unui obiect o lista ca sa pot testa "Create a new ApricotJam and calculate in the test class the cost of the fruit used for the jam"
         Map<String, Double> fruitPricePerKg = Map.of("appricot", 5.0, "peach", 3.5, "melon", 7.0);
-        List<Fruits> fruits = new ArrayList<>();
-        fruits.add(new Fruits("appricot", 25, "kg"));
-        System.out.println(fruits.get(0).fruitsQty * fruitPricePerKg.get("appricot"));
+       // List<Fruits> fruits = new ArrayList<>();
+        //fruits.add(new Fruits("appricot", 25, "kg"));
+        System.out.println(appricotJamTest.fruits.get(0).fruitsQty * fruitPricePerKg.get("appricot"));
     }
 
 
