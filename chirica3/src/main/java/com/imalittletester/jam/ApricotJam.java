@@ -57,4 +57,23 @@ public class ApricotJam extends Jam {
     public int remainderJam(int qtyInGrams) {
         return qtyInGrams % jar.jarCapacity;
     }
+    public boolean lastDayOfMonth(String month, int zi){
+        boolean lastDay = false;
+        switch (month){
+            case "January" -> { if (zi == 31) {lastDay = true;}}
+            case "February" -> { if (zi == 28) {lastDay = true;}}
+            case "March" -> { if (zi == 31) {lastDay = true;}}
+            case "April" -> { if (zi == 30) {lastDay = true;}}
+            case "May" -> { if (zi == 31) {lastDay = true;}}
+            case "June" -> { if (zi == 30) {lastDay = true;}}
+            case "July" -> { if (zi == 31) {lastDay = true;}}
+            case "August" -> { if (zi == 31) {lastDay = true;}}
+            case "September" -> { if (zi == 30) {lastDay = true;}}
+            case "October" -> { if (zi == 31) {lastDay = true;}}
+            case "November" -> { if (zi == 30) {lastDay = true;}}
+            case "December" -> { if (zi == 31) {lastDay = true;}}
+        }
+        return lastDay;
+    }
+
 }

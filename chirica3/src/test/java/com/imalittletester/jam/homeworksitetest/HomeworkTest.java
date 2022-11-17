@@ -8,8 +8,9 @@ public class HomeworkTest {
 
     @Test
     void firstTest(){
-        int max = 100;
-        garminCookie.multipleOf7(max);
+       int max = 100;
+       garminCookie.multipleOf7(max);
+       // garminCookie.lastDayOfMonth("January", 25);
     }
 
 }

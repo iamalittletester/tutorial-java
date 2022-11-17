@@ -41,14 +41,15 @@ public class ApricotJamTest {
     @Order(1)
     @Test
     void thirdTest(){
-       apricotJam3.makeJam();
-       System.out.println("+++++++++++++++++++");
-       melonJam.makeJam();
+      // apricotJam3.makeJam();
+      // System.out.println("+++++++++++++++++++");
+      // melonJam.makeJam();
       /*  System.out.println("avem " + apricotJam3.howManyFullJars(2300) + " borcane pline.");
         System.out.println("mai raman " + apricotJam3.remainderJam(2300) + "g.");
         System.out.println(apricotJam3.equals(apricotJam4));
         System.out.println("is jam3 dietetic? " + apricotJam3.isDietetic);
         System.out.println("is jam4 dietetic? " + apricotJam4.isDietetic);*/
+        System.out.println(apricotJam.lastDayOfMonth("January", 31));
     }
 
     @Order(2)
