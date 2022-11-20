@@ -74,8 +74,15 @@ public AppricotJam appricotJamTest = new AppricotJam ("sugar cane", 1.5f, "kg", 
 
     @Order(4)
     @Test
-    void fourthTest() {
-
+    void fourthTest(){
+        //tratarea unei exceptii
+//        try {
+//            System.out.println(9 / 0);
+//        }
+//        catch (Exception e) {
+//         //   e.printStackTrace();
+//            throw new RuntimeException(( "Nu am putut imparti 9 la 0"));
+//        }
         appricotJam3.makeJam();
         System.out.println("----------------------------------");
         appricotJamStevia.makeJam();
@@ -176,7 +183,7 @@ public AppricotJam appricotJamTest = new AppricotJam ("sugar cane", 1.5f, "kg", 
        // List<Fruits> fruits = new ArrayList<>();
         //fruits.add(new Fruits("appricot", 25, "kg"));
         System.out.println(appricotJamTest.fruits.get(0).fruitsQty * fruitPricePerKg.get("appricot"));
+        System.out.println(appricotJam3.qtyInGramsUsingIfSimple("grams", 1000));
+        //System.out.println(appricotJam3.qtyInGramsUsingIfSimple("gramz", 1000));
     }
-
-
 }

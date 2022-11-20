@@ -9,13 +9,11 @@ public class UnitOfMeasureConverterTest {
     @Test
             public void firstTest(){
 
-        System.out.println(lastDayOfMonth.lastDayOfProvidedMonth("Noiembrie", 31, 2022));
+       System.out.println(lastDayOfMonth.lastDayOfProvidedMonth("Noiembrie", 31, 2022));
         System.out.println("-------------------------");
         System.out.println(lastDayOfMonth.lastDayOfProvidedMonth("Noiembrie", 30, 2022));
-        System.out.println("-------------------------");
-        System.out.println(lastDayOfMonth.lastDayOfProvidedMonth("Februarie", 28, 2022));
-        System.out.println("-------------------------");
-        System.out.println(lastDayOfMonth.lastDayOfProvidedMonth("Februarie", 29, 2022));
+       System.out.println(lastDayOfMonth.lastDayOfProvidedMonth("Februarie", 28, 2022));
+       System.out.println("-------------------------");
         System.out.println("-------------------------");
         System.out.println(lastDayOfMonth.divideBySeven(21));
         System.out.println(lastDayOfMonth.divideBySeven(14));

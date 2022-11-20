@@ -37,9 +37,9 @@ public class Jam {
     public String sweetenerUom;
 
     public boolean isDietetic;
-   // public List<Fruits> fruits;
+   public List<Fruits> fruits;
 
-    List<Fruits> fruits = new ArrayList<>();
+   // List<Fruits> fruits = new ArrayList<>();
 //    public Jam(String sweetener, float sweetenerQty, String sweetenerUom, List<Fruits> fruits) {
 //        this.sweetener = sweetener;
 //        this.sweetenerQty = sweetenerQty;
@@ -93,7 +93,7 @@ public class Jam {
         }
         return qty * mustMultipleBy;
     }
-
+// metoda ce arunca o eroare
     public double qtyInGramsUsingIfSimple(String uom, double qty) {
         if (uom.equalsIgnoreCase("kg") || uom.equalsIgnoreCase("kilograms")) {
             return qty * 1000; //odata rulat return se iese din metoda si al doilea if nu se mai executa
@@ -101,8 +101,12 @@ public class Jam {
         if (uom.equalsIgnoreCase("micrograms")) {
             return qty / 1000;
         }
-        return qty;
+        if (uom.equalsIgnoreCase("grams")){
+            return qty;
+        }
+        throw new RuntimeException(("The unit of measure provided was not valid!"));
     }
+    //kg, kilograms, micrograms, grams, jajs
  public double qtyInGramsUsingSwitch(String uom, double qty){
         double valueToReturn = 0;
         switch(uom.toLowerCase()){
