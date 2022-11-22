@@ -58,16 +58,33 @@ public class Senzor {
         }
     }
 
-    public void createEventDataAndUomAndDataListSpecific(){
+    public void createEventDataAndUomAndDataListSpecific() {
         this.eventDataList = new ArrayList<>();
         this.uomAndDateList = new ArrayList<>();
-        uomAndDateList.add(new UomAndDate("km", "11-20-2022 15:12", 1000));
+
+        uomAndDateList.add(new UomAndDate("km", "11-21-2022 15:12", 1000));
+        uomAndDateList.add(new UomAndDate("km", "11-22-2022 15:12", 1000));
+        uomAndDateList.add(new UomAndDate("mi", "11-23-2022 15:12", 1600));
+        uomAndDateList.add(new UomAndDate("mi", "11-20-2022 15:12", 1600));
         uomAndDateList.add(new UomAndDate("mi", "11-19-2022 15:12", 1600));
+        eventDataList.add(new EventData(11, "11-23-2022 09:12"));
+        eventDataList.add(new EventData(1000, "11-23-2022 12:12"));
+        eventDataList.add(new EventData(1000, "11-23-2022 14:12"));
+        eventDataList.add(new EventData(11, "11-23-2022 18:12"));
+        eventDataList.add(new EventData(22, "11-23-2022 21:12"));
+        eventDataList.add(new EventData(1000, "11-22-2022 07:12"));
+        eventDataList.add(new EventData(500, "11-22-2022 11:12"));
+        eventDataList.add(new EventData(4000, "11-22-2022 15:12"));
+        eventDataList.add(new EventData(22, "11-22-2022 21:59"));
+        eventDataList.add(new EventData(11, "11-21-2022 11:12"));
+        eventDataList.add(new EventData(55, "11-21-2022 21:59"));
+        eventDataList.add(new EventData(7000, "11-21-2022 13:12"));
         eventDataList.add(new EventData(11, "11-20-2022 15:12"));
         eventDataList.add(new EventData(11, "11-20-2022 10:13"));
         eventDataList.add(new EventData(55, "11-19-2022 15:12"));
         eventDataList.add(new EventData(12, "11-19-2022 17:13"));
         eventDataList.add(new EventData(11, "11-19-2022 19:14"));
+        eventDataList.add(new EventData(11, "11-19-2022 20:14"));
 
     }
 }

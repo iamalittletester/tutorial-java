@@ -1,6 +1,5 @@
 package com.imalittletester.Assesment;
 
-import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -31,23 +30,6 @@ public class UserData {
         }
     }
 
-    public void afisajTotal() {
-        this.senzor.createEventDataAndUomAndDataListRandom();
-        System.out.println("Random By User: " + this.getCurrentDayStepCount());
-        System.out.println(getCurrentDayDistance(Calendar.getInstance()));
-        System.out.println(nrOfCaloriesCurrentDay());
-        System.out.println(nrOfAlerts());
-        distance7Days();
-
-        System.out.println("----------------");
-        this.senzor.createEventDataAndUomAndDataListSpecific();
-        System.out.println("Specific By User: " + this.getCurrentDayStepCount());
-        System.out.println(getCurrentDayDistance(Calendar.getInstance()));
-        System.out.println(nrOfCaloriesCurrentDay());
-        System.out.println(nrOfAlerts());
-        distance7Days();
-        DateAndHour();
-    }
 
     public String getCurrentDayStepCount() {
         int totalSteps = this.senzor.getStepCountByDate(Calendar.getInstance());
@@ -107,31 +89,40 @@ public class UserData {
     }
 
     public void distance7Days() {
+        double distanceKm = 0;
+        double distanceMi = 0;
         Calendar calendar = Calendar.getInstance();
         for (int j = 0; j < 7; j++) {
             Calendar cal2 = Calendar.getInstance();
             cal2.set(Calendar.DATE, calendar.get(Calendar.DATE) - j);
-            int stepsPerUom = 0;
-            String uom = "";
+            //int stepsPerUom = 0;
+            // String uom = "";
             for (int i = 0; i < this.senzor.uomAndDateList.size(); i++) {
                 if (cal2.get(Calendar.YEAR) == this.senzor.uomAndDateList.get(i).date.get(Calendar.YEAR) &&
                         cal2.get(Calendar.MONTH) == this.senzor.uomAndDateList.get(i).date.get(Calendar.MONTH) &&
                         cal2.get(Calendar.DATE) == this.senzor.uomAndDateList.get(i).date.get(Calendar.DATE)) {
-                    stepsPerUom = this.senzor.uomAndDateList.get(i).stepsPerUom;
-                    uom = this.senzor.uomAndDateList.get(i).uom;
-                    break;
+                    // stepsPerUom = this.senzor.uomAndDateList.get(i).stepsPerUom;
+                    // uom = this.senzor.uomAndDateList.get(i).uom;
+
+                    //int todaySteps = this.senzor.getStepCountByDate(cal2);
+                    //  this.senzor.uomAndDateList.get(i).totalDistance += todaySteps;
+                    //  break;
+                    int todaySteps = this.senzor.getStepCountByDate(cal2);
+                    if (this.senzor.uomAndDateList.get(i).uom == "km") {
+                        if (this.senzor.uomAndDateList.get(i).stepsPerUom != 0) {
+                            distanceKm = 1.0 * todaySteps / this.senzor.uomAndDateList.get(i).stepsPerUom;
+                        }
+                    } else {
+
+                        if (this.senzor.uomAndDateList.get(i).stepsPerUom != 0) {
+                            distanceMi = 1.0 * todaySteps / this.senzor.uomAndDateList.get(i).stepsPerUom;
+                        }
+                    }
                 }
             }
-            int todaySteps = this.senzor.getStepCountByDate(Calendar.getInstance());
-            double distance = 0;
-            if (stepsPerUom != 0) {
-                distance = 1.0 * todaySteps / stepsPerUom;
-            }
-            String date = "";
-            SimpleDateFormat format1 = new SimpleDateFormat("MMMM dd yyyy");
-            String formatted = format1.format(cal2.getTime());
-            System.out.println("On " + formatted + ", the distance is: " + distance + " " + uom);
         }
+
+        System.out.println("In the last 7 days the user did: " + distanceKm + " km, and " + distanceMi + " mi");
     }
 
     public void DateAndHour() {
@@ -141,6 +132,23 @@ public class UserData {
         System.out.println("Current Date And Time : " + formatted);
     }
 
+    public void afisajTotal() {
+        this.senzor.createEventDataAndUomAndDataListRandom();
+        System.out.println("Random By User: " + this.getCurrentDayStepCount());
+        System.out.println(getCurrentDayDistance(Calendar.getInstance()));
+        System.out.println(nrOfCaloriesCurrentDay());
+        System.out.println(nrOfAlerts());
+        distance7Days();
+
+        System.out.println("----------------");
+        this.senzor.createEventDataAndUomAndDataListSpecific();
+        System.out.println("Specific By User: " + this.getCurrentDayStepCount());
+        System.out.println(getCurrentDayDistance(Calendar.getInstance()));
+        System.out.println(nrOfCaloriesCurrentDay());
+        System.out.println(nrOfAlerts());
+        distance7Days();
+        DateAndHour();
+    }
 
 }
 

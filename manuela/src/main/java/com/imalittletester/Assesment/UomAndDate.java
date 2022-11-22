@@ -15,6 +15,7 @@ public class UomAndDate {
         this.date = date;
         this.stepsPerUom = stepsPerUom;
     }
+
     public UomAndDate(String uom, String date, int stepsPerUom) {
         this.uom = uom;
         Calendar cal = Calendar.getInstance();
