@@ -133,8 +133,10 @@ public class UserData {
     }
 
     public void afisajTotal() {
+        System.out.println("----------------");
         this.senzor.createEventDataAndUomAndDataListRandom();
-        System.out.println("Random By User: " + this.getCurrentDayStepCount());
+        System.out.println("Random By User: ");
+        System.out.println(this.getCurrentDayStepCount());
         System.out.println(getCurrentDayDistance(Calendar.getInstance()));
         System.out.println(nrOfCaloriesCurrentDay());
         System.out.println(nrOfAlerts());
@@ -142,7 +144,8 @@ public class UserData {
 
         System.out.println("----------------");
         this.senzor.createEventDataAndUomAndDataListSpecific();
-        System.out.println("Specific By User: " + this.getCurrentDayStepCount());
+        System.out.println("Specific By User: ");
+        System.out.println(this.getCurrentDayStepCount());
         System.out.println(getCurrentDayDistance(Calendar.getInstance()));
         System.out.println(nrOfCaloriesCurrentDay());
         System.out.println(nrOfAlerts());
